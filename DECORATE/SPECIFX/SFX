@@ -240,7 +240,7 @@ radius 32
 +NOBLOCKMAP
 +LOOKALLAROUND
 +CLIENTSIDEONLY
-Renderstyle Translucent
+Renderstyle Add
 Alpha 0.9
 Scale 1.5
 states

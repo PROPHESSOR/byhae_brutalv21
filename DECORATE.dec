@@ -37,7 +37,6 @@
 
 //BEHAVIOR 
 #include DECORATE/RULES/DEMONPWR
-#include DECORATE/FROZEN
 
 
 Actor FreezerSelected: Inventory
@@ -53,6 +52,7 @@ Actor Fallingheight2 : Inventory
 {
 inventory.maxamount 100
 }
+
 
 
 // Duke Alien Barrel
@@ -135,6 +135,7 @@ ACTOR SleepingMarine 587
     Death.Fatality:
 	Death.ExtremePunches:
     Death.Kick:
+	Death.Slide:
 		TNT1 A 0 A_Playsound ("TAUNT")
 		TNT1 A 0 A_ChangeFLag ("NOPAIN", 1)
         PLST ABCDE 6

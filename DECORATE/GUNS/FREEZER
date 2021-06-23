@@ -388,8 +388,8 @@ ACTOR CryoSmoke
     States
     {
     Spawn:
-		SMOK A 0
-        SMOK A 2 A_FadeOut (0.05)
+		FMOK A 0
+        FMOK A 2 A_FadeOut (0.05)
         Wait
     }
 }
@@ -398,7 +398,7 @@ Actor CryoSmoke2 : CryoSmoke { StencilColor "DD DD DD" Scale 0.7 Alpha 0.5 VSpee
 	States {
 	Spawn:
 		TNT1 A 0
-		SMOK A 6 A_FadeOut(0.04)
+		FMOK A 6 A_FadeOut(0.04)
 		Wait
 	}
 }
