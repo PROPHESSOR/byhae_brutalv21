@@ -300,8 +300,8 @@ next MAP15
 cluster 14
 
 map MAP15 "Ascendency"
-//music D_Runnin
-sky1 "sky10b" 0
+music D_TENSE
+sky1 "SKYHEL" 0
 next MAP16
 cluster 15
 
