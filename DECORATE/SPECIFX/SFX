@@ -1,0 +1,545 @@
+actor SlimeParticleSpawner 7368
+{
+//$Category SpecialFX
++NOCLIP
+Radius 2
+Height 8
+States  
+{
+Spawn:	TNT1 FFFF 0 A_CustomMissile ("slimeParticleX", 2, 0, random (0, 360), 2, random (50, 140))
+		TNT1 FFFF 0 A_CustomMissile ("slimeParticleXFaster", 2, 0, random (0, 360), 2, random (50, 140))
+		TNT1 A 12
+	Loop
+	}}
+	
+Actor Detonator //by STG MARK_IV
+{
+height 64
+radius 64
++SOLID
++SHOOTABLE
++NOBLOOD
++NOGRAVITY
+mass 999999
+Health 99999
+Scale 0.8
+states
+	{
+	Spawn:
+	    TNT1 A 4
+		Stop
+}
+}
+
+ACTOR FakeLightSpot 7369
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT")
+		Loop
+	}}
+//Electro spark by SGT Mark_IV
+
+
+actor SpawnSpark_Down2 7371
+{
+	//$Category SpecialFX
+  height 8
+  radius 4
+  +NOBLOCKMAP
+  +NOGRAVITY
+  +NOSECTOR
+  +NOCLIP
+  +SPAWNCEILING
++CLIENTSIDEONLY
+  states
+  {
+  Spawn:
+  Active:
+    TNT1 A 0
+    //TNT1 A 0 A_PlaySound ("Sparks/Spawn")
+    TNT1 A 0 A_Jump (256, 1, 2, 3, 4, 5, 6)
+    TNT1 A 1 A_SpawnItem ("SparkFlare2_W1")
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItem ("SparkFlare2_W1")
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItem ("SparkFlare2_W1")
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItem ("SparkFlare2_W1")
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItem ("SparkFlare2_W1")
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItem ("SparkFlare2_W1")
+  SpawnSparks:
+    TNT1 AA 0 A_CustomMissile ("Spark_Wx1", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx2", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx3", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx4", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx5", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx6", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx7", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx8", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx9", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx10", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx11", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx12", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx13", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx14", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx15", 0.0, 0, random (0, 360), 2, random (270, 315))
+	TNT1 A 0 A_Jump (256, 1, 2, 3, 4, 5, 6)
+	TNT1 A 100
+	Goto Spawn
+	TNT1 A 120
+	Goto Spawn
+	TNT1 A 540
+	Goto Spawn
+	TNT1 A 80
+	Goto Spawn
+	TNT1 A 140
+	Goto Spawn
+	TNT1 A 160
+	Goto Spawn
+  Inactive:
+    TNT1 A -1
+    stop
+  }
+}
+
+
+actor SpawnSpark_Up2 7372
+{
+	
+  height 8
+  radius 4
+  +NOBLOCKMAP
+  +NOGRAVITY
+  +NOSECTOR
+  +NOCLIP
+  +CLIENTSIDEONLY
+  states
+  {
+  Spawn:
+  Active:
+    TNT1 A 0
+   // TNT1 A 0 A_PlaySound ("Sparks/Spawn")
+    TNT1 A 0 A_Jump (256, 1, 2, 3, 4, 5, 6)
+    TNT1 A 1 A_SpawnItem ("SparkFlare2_W1")
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItem ("SparkFlare2_W1")
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItem ("SparkFlare2_W1")
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItem ("SparkFlare2_W1")
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItem ("SparkFlare2_W1")
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItem ("SparkFlare2_W1")
+  SpawnSparks:
+    TNT1 AA 0 A_CustomMissile ("Spark_Wx1", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx2", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx3", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx4", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx5", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx6", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx7", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx8", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx9", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx10", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx11", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx12", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx13", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx14", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx15", 0.0, 0, random (0, 360), 2, random (67, 113))
+	TNT1 AA 0 A_CustomMissile ("Spark_Wx16", 0.0, 0, random (0, 360), 2, random (67, 113))
+    TNT1 A 0 A_Jump (256, 1, 2, 3, 4, 5, 6)
+	TNT1 A 100
+	Goto Spawn
+	TNT1 A 120
+	Goto Spawn
+	TNT1 A 540
+	Goto Spawn
+	TNT1 A 80
+	Goto Spawn
+	TNT1 A 140
+	Goto Spawn
+	TNT1 A 160
+	Goto Spawn
+  Inactive:
+    TNT1 A -1
+    stop
+  }
+}
+
+
+actor SparkFlare2_W1
+{
+  height 0
+  radius 0
+  mass 0
+  +MISSILE +NOBLOCKMAP +NOCLIP +NOGRAVITY
++CLIENTSIDEONLY
+  renderstyle Add
+  scale 0.25
+  states
+  {
+  Spawn:
+    SPRK A 1 bright A_FadeOut (0.1)
+    loop
+  }
+}
+
+actor Spark_Wx1
+{
+  height 1
+  radius 2
+  mass 0
+  speed 0.25
++CLIENTSIDEONLY
+  +MISSILE +NOBLOCKMAP +LOWGRAVITY +DOOMBOUNCE
+  bouncefactor 0.2
+  renderstyle Add
+  scale 0.02
+  states
+  {
+  Spawn:
+    SPRK A 1 bright
+    loop
+  Death:
+    SPRK AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 bright A_FadeOut (0.1)
+    Stop
+  }
+}
+
+actor Spark_Wx2 : Spark_Wx1  { speed 0.5  }
+actor Spark_Wx3 : Spark_Wx1  { speed 0.75 }
+actor Spark_Wx4 : Spark_Wx1  { speed 1.0  }
+actor Spark_Wx5 : Spark_Wx1  { speed 1.25 }
+actor Spark_Wx6 : Spark_Wx1  { speed 1.5  }
+actor Spark_Wx7 : Spark_Wx1  { speed 1.75 }
+actor Spark_Wx8 : Spark_Wx1  { speed 2.0  }
+actor Spark_Wx9 : Spark_Wx1  { speed 2.25 }
+actor Spark_Wx10 : Spark_Wx1 { speed 2.5  }
+actor Spark_Wx11 : Spark_Wx1 { speed 2.75 }
+actor Spark_Wx12 : Spark_Wx1 { speed 3.0  }
+actor Spark_Wx13 : Spark_Wx1 { speed 3.25 }
+actor Spark_Wx14 : Spark_Wx1 { speed 3.5  }
+actor Spark_Wx15 : Spark_Wx1 { speed 3.75 }
+actor Spark_Wx16 : Spark_Wx1 { speed 4.0  }
+
+Actor Smokesh 7385
+{
+//$Category SpecialFX
+height 32
+radius 32
++NOCLIP
++NOBLOCKMAP
++LOOKALLAROUND
++CLIENTSIDEONLY
+Renderstyle Translucent
+Alpha 0.9
+Scale 1.5
+states
+	{
+	Spawn:
+	    TNT1 A 0
+  		SM7K ABCDEFGH 4
+        Loop
+	}
+}
+///////////////////////////////////////////
+Actor GlassShards
+{
+bouncefactor 0.2
+speed 6
+seesound ""
+renderstyle translucent
+alpha 0.3
+scale 0.5
+translation "0:255=4:4"
+	+DOOMBOUNCE
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+states
+	{
+	Spawn:
+		TNT1 A 0
+		BPRT ABCDEFGH 4
+		loop
+   Death:
+   	TNT1 A 0
+   	TNT1 A 0 A_jump(255,"death1","death2","death3","death4","death5","death6")
+Death1:
+      BPRT A 1 A_Fadeout(0.005)
+      loop
+Death2:
+      BPRT C 1 A_Fadeout(0.005)
+      loop
+Death3:
+      BPRT E 1 A_Fadeout(0.005)
+      loop
+Death4:
+      BPRT G 1 A_Fadeout(0.005)
+      loop
+Death5:
+      BPRT B 1 A_Fadeout(0.005)
+      loop
+Death6:
+      BPRT D 1 A_Fadeout(0.005)
+      loop
+   }
+}
+
+
+Actor SummonGlass
+{
+Radius 0
+Height 0
+States
+	{
+	Spawn:
+	TNT1 A 0
+	TNT1 AAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GlassShards",16,random(-3,3),random(0,360),2,random(40,70))
+	TNT1 A 0
+		Stop
+	}
+}
+///////////////////////////////////////////
+///////////////////////////////////////////
+///////////////////////////////////////////
+ACTOR TinySpotWHITE 7400
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}
+	ACTOR FakeLightSpotWHITE 7401
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}
+ACTOR TinySpotBLUE 7402
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}
+	ACTOR FakeLightSpotBLUE 7403
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}
+ACTOR TinySpotRED 7404
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT3")
+		Loop
+	}}
+	ACTOR FakeLightSpotRED 7405
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT3")
+		Loop
+	}}
+	
+ACTOR TinySpotGREEN 7406
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT4")
+		Loop
+	}}
+	ACTOR FakeLightSpotGREEN 7407
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT4")
+		Loop
+	}}
+	
+ACTOR TinySpotYELLOW 7408
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}
+ACTOR FakeLightSpotYELLOW 7409
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}
+
+ACTOR TinySpotORANGE 7410
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}
+
+ACTOR FakeLightSpotORANGE 7411
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}
+	
+ACTOR TinySpotPINK 7412
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}
+ACTOR FakeLightSpotPINK 7413
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}
+	
+ACTOR TinySpotBROWN 7414
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}
+ACTOR FakeLightSpotBROWN 7415
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}
+
+ACTOR CeilSteam 7416
+{
+//$Category SpecialFX
+Radius 12
+Height 92
+RenderStyle Translucent
+Alpha 0.5
+-SOLID
++NOGRAVITY
++SPAWNCEILING
+States
+{
+Spawn:
+	TNT1 A 0 A_Playsound("SteamHiss")
+	STEM ABCDE 4
+	loop
+}}
+
+ACTOR AlertSpotRED 7417
+{
+	//$Category SpecialFX
+	Radius 10
+	Height 8
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 6 //Light("FAKELIGHT2")
+		Loop
+	}}

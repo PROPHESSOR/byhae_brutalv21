@@ -1,0 +1,177 @@
+Actor SkullPink 11000
+{
+	//$Category Placeable Skull
++SOLID
++SHOOTABLE
++NOBLOOD
++FLOORCLIP
+Mass 9999999
+Height 24
+Radius 16
+renderstyle translucent
+alpha 0.7
+States
+{
+Spawn:	PSPK A 1
+		PSPK A -1
+
+Stop
+}}
+
+Actor SkullBrown 11001
+{
+	//$Category Placeable Skull
++SOLID
++SHOOTABLE
++NOBLOOD
++FLOORCLIP
+Mass 9999999
+Height 24
+Radius 16
+renderstyle translucent
+alpha 0.7
+States
+{
+Spawn:	PSBR A 1
+		PSBR A -1
+
+Stop
+}}
+
+Actor SkullGreen 11002
+{
+	//$Category Placeable Skull
++SOLID
++SHOOTABLE
++NOBLOOD
++FLOORCLIP
+Mass 9999999
+Height 24
+Radius 16
+renderstyle translucent
+alpha 0.7
+States
+{
+Spawn:	PSGR A 1
+		PSGR A -1
+Stop
+}}
+
+Actor SkullRed 11003
+{
+	//$Category Placeable Skull
++SOLID
++SHOOTABLE
++NOBLOOD
++FLOORCLIP
+Mass 9999999
+Height 24
+Radius 16
+renderstyle translucent
+alpha 0.7
+States
+{
+Spawn:	PSRD A 1
+		PSRD A -1
+
+Stop
+}}
+Actor SkullBlue 11004
+{
+	//$Category Placeable Skull
++SOLID
++SHOOTABLE
++NOBLOOD
++FLOORCLIP
+Mass 9999999
+Height 24
+Radius 16
+renderstyle translucent
+alpha 0.7
+States
+{
+Spawn:	PSBL A 1
+		PSBL A -1
+
+Stop
+}}
+
+Actor SkullOrange 11005
+{
+	//$Category Placeable Skull
++SOLID
++SHOOTABLE
++NOBLOOD
++FLOORCLIP
+Mass 9999999
+Height 24
+Radius 16
+renderstyle translucent
+alpha 0.7
+States
+{
+Spawn:	PSOR A 1
+		PSOR A -1
+
+Stop
+}}
+
+Actor SkullSilver 11006
+{
+	//$Category Placeable Skull
++SOLID
++SHOOTABLE
++NOBLOOD
++FLOORCLIP
+Mass 9999999
+Height 24
+Radius 16
+renderstyle translucent
+alpha 0.7
+States
+{
+Spawn:	PSSV A 1
+		PSSV A -1
+
+Stop
+}}
+
+Actor SkullBlack 11007
+{
+	//$Category Placeable Skull
++SOLID
++SHOOTABLE
++NOBLOOD
++FLOORCLIP
+Mass 9999999
+Height 24
+Radius 16
+renderstyle translucent
+alpha 0.7
+States
+{
+Spawn:	PSBK A 1
+		PSBK A -1
+
+Stop
+}}
+
+Actor SkullYellow 11008
+{
+	//$Category Placeable Skull
++SOLID
++SHOOTABLE
++NOBLOOD
++FLOORCLIP
+Mass 9999999
+Height 24
+Radius 16
+renderstyle translucent
+alpha 0.7
+States
+{
+Spawn:	PSYL A 1
+		PSYL A -1
+
+Stop
+}}

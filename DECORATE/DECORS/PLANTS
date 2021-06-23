@@ -1,0 +1,368 @@
+Actor SmallTree 7306
+{
+//$Category Plant
+height 97
+radius 8
+states
+	{
+	Spawn:
+	    PLNT A 1
+		PLNT A -1
+		Stop
+	}
+}
+
+
+Actor Plant01 7307
+{
+//$Category Plant
+height 21
+radius 21
+-SOLID
+states
+	{
+	Spawn:
+	    PLNT B 1
+		PLNT B -1
+		Stop
+	}
+}
+
+Actor Plant02 7308
+{
+//$Category Plant
+Scale 0.8
+states
+	{
+	Spawn:
+	    PLNT C 1
+		PLNT C -1
+		Stop
+	}
+}
+
+Actor Plant03 7309
+{
+//$Category Plant
+Scale 0.8
+states
+	{
+	Spawn:
+	    PLNT D 1
+		PLNT D -1
+		Stop
+	}
+}
+
+Actor Tree 7310
+{
+//$Category Plant
+Scale 1.0
++SOLID
+height 96
+radius 16
+states
+	{
+	Spawn:
+	    TREE A 1
+		TREE A -1
+		Stop
+	}
+}
+
+
+Actor Tree02 7311
+{
+//$Category Plant
++SOLID
+height 96
+radius 16
+states
+	{
+	Spawn:
+	    TREE B 1
+		TREE B -1
+		Stop
+	}
+}
+
+
+Actor Tree03 7312
+{
+//$Category Plant
+states
+	{
+	Spawn:
+	    TREE C 1
+		TREE C -1
+		Stop
+	}
+}
+
+
+Actor Tree04 7313
+{
+//$Category Plant
+states
+	{
+	Spawn:
+	    TREE D 1
+		TREE D -1
+		Stop
+	}
+}
+
+Actor Tree05 7314
+{
+//$Category Plant
+states
+	{
+	Spawn:
+	    TREE E 1
+		TREE E -1
+		Stop
+	}
+}
+
+
+Actor DeadTree01 7315
+{
+//$Category Plant
+states
+	{
+	Spawn:
+	    TREE F 1
+		TREE F -1
+		Stop
+	}}
+
+
+Actor DeadTree02 7316
+{
+//$Category Plant
+states
+	{
+	Spawn:
+	    TREE G 1
+		TREE G -1
+		Stop
+	}}
+
+
+Actor DeadTree03 7317
+{
+//$Category Plant
+states
+	{
+	Spawn:
+	    TREE H 1
+		TREE H -1
+		Stop
+	}}
+
+Actor Schilf1 7320
+{
+//$Category Plant
+states
+	{
+	Spawn:
+	   SFLY K 1
+		SFLY K -1
+		Stop
+	}
+}
+
+// Rootpack
+ACTOR Root 7347
+{
+//$Category Roots
+  Game Doom
+  Radius 16
+  Height 84
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    ROOT A -1
+    Stop
+  }
+}
+ACTOR RootBlocking : Root { +SOLID } //7348
+
+ACTOR RootSmooth 7349
+{
+//$Category Roots
+  Game Doom
+  Radius 16
+  Height 84
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    ROOT B -1
+    Stop
+  }
+}
+ACTOR RootSmoothBlocking : RootSmooth { +SOLID } //7349
+
+ACTOR RootSmall 7350
+{
+//$Category Roots
+  Game Doom
+  Radius 16
+  Height 48
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    ROOT C -1
+    Stop
+  }
+}
+ACTOR RootSmallBlocking : RootSmall { +SOLID } //7351
+
+ACTOR RootTiny 7352
+{
+//$Category Roots
+  Game Doom
+  Radius 16
+  Height 24
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    ROOT D -1
+    Stop
+  }
+}
+ACTOR RootTinyBlocking : RootTiny { +SOLID } //7353
+
+ACTOR RootDouble 7354
+{
+//$Category Roots
+  Game Doom
+  Radius 16
+  Height 48
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    ROOT E -1
+    Stop
+  }
+}
+ACTOR RootDoubleBlocking : RootDouble { +SOLID } //7355
+
+ACTOR RootFloor 7356
+{
+//$Category Roots
+  Game Doom
+  Radius 16
+  Height 48
+  -SOLID
+  States
+  {
+  Spawn:
+    ROOT F -1
+    Stop
+  }
+}
+ACTOR RootFloorBlocking : RootFloor { +SOLID } //7357
+
+ACTOR RootBloody 7358
+{
+//$Category Roots
+  Game Doom
+  Radius 16
+  Height 84
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    ROOT G -1
+    Stop
+  }
+}
+ACTOR RootBloodyBlocking : RootBloody { +SOLID } //7359
+
+ACTOR RootBloodySmall 7360
+{
+//$Category Roots
+  Game Doom
+  Radius 16
+  Height 48
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    ROOT H -1
+    Stop
+  }
+}
+ACTOR RootBloodySmallBlocking : RootBloodySmall { +SOLID } //7361
+
+ACTOR RootBloodyTiny 7362
+{
+//$Category Roots
+  Game Doom
+  Radius 16
+  Height 24
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    ROOT I -1
+    Stop
+  }
+}
+ACTOR RootBloodyTinyBlocking : RootBloodyTiny { +SOLID } //7363
+
+ACTOR RootBloodyDouble 7364
+{
+//$Category Roots
+  Game Doom
+  Radius 16
+  Height 48
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    ROOT J -1
+    Stop
+  }
+}
+ACTOR RootBloodyDoubleBlocking : RootBloodyDouble { +SOLID } //7365
+
+ACTOR RootBloodyFloor 7366
+{
+//$Category Roots
+  Game Doom
+  Radius 16
+  Height 48
+  -SOLID
+  States
+  {
+  Spawn:
+    ROOT K -1
+    Stop
+  }
+}
+ACTOR RootBloodyFloorBlocking : RootBloodyFloor { +SOLID } //7367

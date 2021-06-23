@@ -1,0 +1,727 @@
+// CORPSE
+Actor GroundedMarine 588
+{
+	//$Category Corpses
+	height 20
+	radius 8
+	Health 100
+	Mass 99999999
+	+SHOOTABLE
+	+FLOORCLIP
+	-SOLID
+	DropItem "HealthPlus" 25
+	DropItem "Clips" 25
+	DropItem "Shells" 25
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+	damagefactor "Trample", 0.0
+    GibHealth 10
+states
+	{
+	Spawn:
+	    C7PT J 1
+		C7PT J -1
+		Stop
+    Death:
+        TNT1 AA 0 A_CustomMissile ("XDeathMarineLeg", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathFlyingMarineHead", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs2", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}
+
+ACTOR HangingMarine1A 7295
+{
+//$Category Corpses
+	Health 100
+	Mass 99999999
+	Radius 16
+	Height 72
+	+NOGRAVITY
+	+SPAWNCEILING
+	+SOLID
+	+SHOOTABLE
+	DropItem "HealthPlus" 25
+	DropItem "Clips" 25
+	DropItem "Shells" 25
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+    GibHealth 10
+	States
+	{
+		Spawn:
+		    TNT1 A 0
+	  TNT1 A 0 A_SpawnItemEx("DripingBloodLeavesPool", 0, 0, 15, 0, 0)
+		Goto Stand
+	Stand:
+		HAMA A 60
+        TNT1 A 0 A_SpawnItemEx("NashGore_FlyingBlood", 0, 0, 15, 0, 0)
+		Loop
+    Death:
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem ("HangingMarine1B")
+        TNT1 A 0 A_CustomMissile ("XDeathMarineLeg", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}
+
+ACTOR HangingMarine1B
+{
+//$Category Corpses
+	Health 100
+	Mass 99999999
+	Radius 16
+	Height 64
+	+NOGRAVITY
+	+SPAWNCEILING
+	+SHOOTABLE
+	DropItem "HealthPlus" 25
+	DropItem "Clips" 25
+	DropItem "Shells" 25
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+    GibHealth 10
+	States
+	{
+		Spawn:
+		    TNT1 A 0
+	  TNT1 A 0 A_SpawnItemEx("DripingBloodLeavesPool", 0, 0, 15, 0, 0)
+		Goto Stand
+	Stand:
+		HAMA B 60
+        TNT1 A 0 A_SpawnItemEx("NashGore_FlyingBlood", 0, 0, 15, 0, 0)
+		Loop
+    Death:
+        TNT1 A 0 A_CustomMissile ("HalfManDeath", 0, 0, random (0, 360), 1, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs2", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}
+
+ACTOR HangingMarine2A 7297
+{
+//$Category Corpses
+	Health 100
+	Mass 99999999
+	Radius 16
+	Height 80
+	+NOGRAVITY
+	+SPAWNCEILING
+	+SOLID
+	+SHOOTABLE
+	DropItem "HealthPlus" 25
+	DropItem "Clips" 25
+	DropItem "Shells" 25
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+    GibHealth 10
+	States
+	{
+		Spawn:
+		    TNT1 A 0
+	  TNT1 A 0 A_SpawnItemEx("DripingBloodLeavesPool", 0, 0, 15, 0, 0)
+		Goto Stand
+	Stand:
+		HAMA C 60
+        TNT1 A 0 A_SpawnItemEx("NashGore_FlyingBlood", 0, 0, 15, 0, 0)
+		Loop
+    Death:
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem ("HangingMarine2B")
+        TNT1 A 0 A_CustomMissile ("XDeathArm1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs1", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}
+
+ACTOR HangingMarine2B
+{
+//$Category Corpses
+	Mass 99999999
+	Radius 16
+	Height 64
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+		Spawn:
+		   	HAMA D 1
+			HAMA D-1
+		Stop
+	}
+}
+
+ACTOR MarineCorpseTo1A 7299
+{
+//$Category Corpses
+	Health 100
+	Mass 99999999
+	Radius 16
+	Height 64
+	+FLOORCLIP
+	-SOLID
+	+SHOOTABLE
+	DropItem "HealthPlus" 25
+	DropItem "Armorshard" 75
+	DropItem "Clips" 25
+	DropItem "Shells" 25
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+	damagefactor "Trample", 0.0
+    GibHealth 10
+	States
+	{
+		Spawn:
+		    HAMA E 1
+			HAMA E -1
+		Stop
+    Death:
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_CustomMissile ("XDeathArm1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MuchBlood", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathFlyingMarineHead", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs2", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}
+
+ACTOR XDeathFlyingMarineHead
+{
+    Radius 8
+    Height 8
+    Scale 0.8
+	Speed 8
+	Mass 1
+    gravity 0.5
+	Decal BrutalBloodSplat
+	BounceFactor 0.4
+	+DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+    +MISSILE
+    seesound "bloood"
+    deathsound "bloood"
+	Scale 1.0
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_SpawnItem("NashGore_BloodSpot",0,0,0,1)
+	    //TNT1 A 0 A_JumpIf(waterlevel > 1, "Death")
+		MHE7 ABCD 5 A_CustomMissile ("NashGore_FlyingBloodTrail", 0, 0, random (0, 360), 2, random (0, 360))
+		Loop
+	Death:
+	    MHE7 A 1
+        TNT1 A 0 A_SpawnItem("NashGore_BloodSpot",0,0,0,1)
+        MHE7 A -1
+		Stop
+    }
+}
+
+ACTOR XDeathMarineLeg
+{
+	Radius 8
+    Height 8
+    Speed 8
+	Mass 1
+	Gravity 0.4
+	BounceFactor 0.5
+	+DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+MISSILE
+    seesound "bloood"
+    deathsound "bloood"
+	Scale 1.0
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_SpawnItem("NashGore_BloodSpot",0,0,0,1)
+	   // TNT1 A 0 A_JumpIf(waterlevel > 1, "Death")
+		XDML ABCDEFGH 5 A_CustomMissile ("NashGore_FlyingBloodTrail5", 0, 0, random (0, 360), 2, random (0, 360))
+		Loop
+	Death:
+        XDML A 1
+		TNT1 A 0 A_SpawnItem("NashGore_BloodSpot",0,0,0,1)
+		XDML A -1
+        Stop
+    }}
+	
+ACTOR XDeathMarineRibs1
+{
+	Radius 8
+    Height 8
+    Speed 8
+	Mass 1
+	Gravity 0.4
+	BounceFactor 0.5
+	+DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+MISSILE
+    seesound "bloood"
+    deathsound "bloood"
+	Scale 1.0
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_SpawnItem("NashGore_BloodSpot",0,0,0,1)
+	   // TNT1 A 0 A_JumpIf(waterlevel > 1, "Death")
+		XDM1 ABCD 5 A_CustomMissile ("NashGore_FlyingBloodTrail5", 0, 0, random (0, 360), 2, random (0, 360))
+		Loop
+	Death:
+        XDM1 A 1
+		TNT1 A 0 A_SpawnItem("NashGore_BloodSpot",0,0,0,1)
+		XDM1 A -1
+        Stop
+    }}
+ACTOR XDeathMarineRibs2: XDeathMarineRibs1
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_SpawnItem("NashGore_BloodSpot",0,0,0,1)
+	   // TNT1 A 0 A_JumpIf(waterlevel > 1, "Death")
+		XDM2 ABCD 5 A_CustomMissile ("NashGore_FlyingBloodTrail5", 0, 0, random (0, 360), 2, random (0, 360))
+		Loop
+	Death:
+        XDM2 A 1
+		TNT1 A 0 A_SpawnItem("NashGore_BloodSpot",0,0,0,1)
+		XDM2 A -1
+        Stop
+    }}
+ACTOR ImpaledMarineHead 7373
+{
+//$Category Corpses
+	Mass 99999999
+	Radius 16
+	Height 60
+	+FLOORCLIP
+	-SOLID
+	States
+	{
+		Spawn:
+		IMGI D 1
+		IMGI D -1
+		Stop
+	}
+}
+
+ACTOR ImpaledMarineTornA 7300
+{
+//$Category Corpses
+	Health 100
+	Mass 99999999
+	Radius 16
+	Height 64
+	+FLOORCLIP
+	+SOLID
+	+SHOOTABLE
+	DropItem "HealthPlus" 25
+	DropItem "Clips" 50
+	DropItem "Shells" 50
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+	damagefactor "Trample", 0.0
+    GibHealth 10
+	States
+	{
+		Spawn:
+		    IMGI A 1
+			IMGI A -1
+		Death:
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem ("ImpaledMarineHead")
+        TNT1 AA 0 A_CustomMissile ("XDeathArm1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MuchBlood", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs2", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 AA 0 A_CustomMissile ("XDeathMarineLeg", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}
+
+ACTOR ImpaledMarineTornB 7301
+{
+//$Category Corpses
+	Health 100
+	Mass 99999999
+	Radius 16
+	Height 64
+	+FLOORCLIP
+	+SOLID
+	+SHOOTABLE
+	DropItem "HealthPlus" 25
+	DropItem "Clips" 50
+	DropItem "Shells" 50
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+	damagefactor "Trample", 0.0
+    GibHealth 10
+	States
+	{
+		Spawn:
+		    IMGI B 1
+			IMGI B -1
+		Death:
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem ("ImpaledMarineHead")
+        TNT1 A 0 A_CustomMissile ("XDeathArm1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MuchBlood", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 AA 0 A_CustomMissile ("XDeathMarineLeg", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}
+
+ACTOR ImpaledMarineTornC 7302
+{
+//$Category Corpses
+	Health 100
+	Mass 99999999
+	Radius 16
+	Height 64
+	+FLOORCLIP
+	+SOLID
+	+SHOOTABLE
+	DropItem "HealthPlus" 25
+	DropItem "Clips" 50
+	DropItem "Shells" 50
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+	damagefactor "Trample", 0.0
+    GibHealth 10
+	States
+	{
+		Spawn:
+		    IMGI C 1
+			IMGI C -1
+		Death:
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem ("ImpaledMarineHead")
+        TNT1 A 0 A_CustomMissile ("Meatdeath", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs2", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MuchBlood", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 AA 0 A_CustomMissile ("XDeathMarineLeg", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}
+
+// Dead Scientists
+Actor DeadMaleScientist 7343
+{
+//$Category Corpses
+Health 50
+	Mass 99999999
+	Radius 32
+	Height 16
+	+FLOORCLIP
+	-SOLID
+	+SHOOTABLE
+	DropItem "HealthPlus" 50
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+	damagefactor "Trample", 0.0
+    GibHealth 10
+	States
+  {
+  	Spawn:
+		    MSCI N 1
+			MSCI N -1
+		Death:
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_CustomMissile ("Meatdeath", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MuchBlood", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+  }}
+
+Actor DeadFemaleScientist 7344
+{
+//$Category Corpses
+ Health 50
+	Mass 99999999
+	Radius 32
+	Height 16
+	+FLOORCLIP
+	-SOLID
+	+SHOOTABLE
+	DropItem "HealthPlus" 50
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+	damagefactor "Trample", 0.0
+    GibHealth 10
+	States
+  {
+  Spawn:
+    FSCI N 1
+	FSCI N -1
+   Death:
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_CustomMissile ("Meatdeath", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MuchBlood", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+  }}
+// Hanged Marine (destroyable now!)
+ACTOR DeadHangingMarineBlocking 7345
+{
+//$Category Corpses
+  Health 100
+  Radius 16
+  Height 64
+  Mass 999999999
+  +NOGRAVITY
+  +SPAWNCEILING
+  +SOLID
+  +SHOOTABLE
+  DropItem "HealthPlus" 25
+	DropItem "Clips" 25
+	DropItem "Shells" 25
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+    GibHealth 10
+ States
+	{
+		Spawn:
+		    TNT1 A 0
+	  TNT1 A 0 A_SpawnItemEx("DripingBloodLeavesPool", 0, 0, 15, 0, 0)
+		Goto Stand
+	Stand:
+		HUSO H 60
+        TNT1 A 0 A_SpawnItemEx("NashGore_FlyingBlood", 0, 0, 15, 0, 0)
+		Loop
+    Death:
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem ("XDeathFlyingMarineHead")
+        TNT1 AA 0 A_CustomMissile ("XDeathMarineLeg", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 AA 0 A_CustomMissile ("XDeathArm1", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+  }}
+  
+// Pole for the next 2 corpses
+ACTOR EmptyPole
+{
+Mass 99999999
+radius 16
+height 66
++FLOORCLIP
+-SOLID
+States
+	{
+		Spawn:
+		    POL2 A 1
+			POL2 A -1
+		Stop
+	}}
+
+ACTOR ImpaledMarinePoleA 7374
+{
+//$Category Corpses
+	Health 100
+	Mass 99999999
+	Radius 16
+	Height 64
+	+FLOORCLIP
+	+SOLID
+	+SHOOTABLE
+	DropItem "HealthPlus" 25
+	DropItem "Clips" 50
+	DropItem "Shells" 50
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+	damagefactor "Trample", 0.0
+    GibHealth 10
+	States
+	{
+		Spawn:
+		    TNT1 A 0
+	  TNT1 A 0 A_SpawnItemEx("DripingBloodLeavesPool", 0, 0, 15, 0, 0)
+		Goto Stand
+	Stand:
+		IMGI E 90
+        TNT1 A 0 A_SpawnItemEx("NashGore_FlyingBlood", 0, 0, 15, 0, 0)
+		Loop
+		Death:
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem ("EmptyPole")
+        TNT1 AA 0 A_CustomMissile ("XDeathArm1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathFlyingMarineHead", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 AA 0 A_CustomMissile ("XDeathMarineLeg", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs2", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}
+ACTOR ImpaledMarinePoleB 7375
+{
+//$Category Corpses
+	Health 100
+	Mass 99999999
+	Radius 16
+	Height 64
+	+FLOORCLIP
+	+SOLID
+	+SHOOTABLE
+	DropItem "HealthPlus" 25
+	DropItem "Clips" 50
+	DropItem "Shells" 50
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+	damagefactor "Trample", 0.0
+    GibHealth 10
+	States
+	{
+		Spawn:
+		    TNT1 A 0
+	  TNT1 A 0 A_SpawnItemEx("DripingBloodLeavesPool", 0, 0, 15, 0, 0)
+		Goto Stand
+	Stand:
+		IMGI F 90
+        TNT1 A 0 A_SpawnItemEx("NashGore_FlyingBlood", 0, 0, 15, 0, 0)
+		Loop
+		Death:
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem ("EmptyPole")
+        TNT1 A 0 A_CustomMissile ("XDeathArm1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathFlyingMarineHead", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineLeg", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs2", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}
+
+ACTOR DrownedMarine 7376
+{
+//$Category Corpses
+	Health 100
+	Mass 50
+	Radius 16
+	Height 40
+	+NOGRAVITY
+	+SOLID
+	+SHOOTABLE
+	+PUSHABLE
+	DropItem "HealthPlus" 25
+	DropItem "Clips" 50
+	DropItem "Shells" 50
+    bloodtype "DeadBlood"
+    damagefactor "Blood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Avoid", 0.0
+	damagefactor "Taunt", 0.0
+	damagefactor "Trample", 0.0
+    GibHealth 10
+	States
+	{
+		Spawn:
+		
+		    DRWM A 1
+			DRWM A -1
+		Death:
+        TNT1 A 0 A_NoBlocking
+        TNT1 AA 0 A_CustomMissile ("XDeathArm1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathFlyingMarineHead", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 AA 0 A_CustomMissile ("XDeathMarineLeg", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs1", 0, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("XDeathMarineRibs2", 0, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}

@@ -1,0 +1,476 @@
+// INTERTEXT DEF
+
+clusterdef 1
+entertext
+"This is an obsolete placeholder"
+music D_READ_M
+
+// 1. Intertext Map 1 -> 2
+clusterdef 2
+entertext
+"
+Oh no, not again!
+Haven't they had enough already???
+This goddamn outpost doesn't have
+sufficent firepower to deal with
+another invasion of that size!
+You have to get away from here ASAP.
+
+Your only means of escape:
+reaching the refinery close by. From
+there, you might find a way to activate
+a long range distress beacon. You
+wonder, if any of your fellow
+marines are still alive out there..."
+music D_ITEXT
+
+// 2. Intertext Map 2 -> 3
+clusterdef 3
+entertext
+"
+Hell truly is everywhere already.
+As you arrived, the staff was
+already slain or turned.
+
+Maybe underground you'll be safe
+For now...
+
+But you still have to activate that
+distress beacon too!"
+music D_ITEXT
+
+// 3. Intertext Map 3 -> 4
+clusterdef 4
+entertext
+"
+Finally you made it out of this stinking
+hole and could breathe fresh air again!
+Now you should search the area for a small
+base located nearby to make a distress call.
+"
+music D_ITEXT
+
+// 4. Intertext Map 4 -> 5
+clusterdef 5
+entertext
+"The distress call has been sent and you
+managed to butcher your way to the rail
+system, which seems to be still intact.
+
+Emergency protocols advise all UAC staff
+to rendez-vous at the hangar for evacuation,
+if necessary.
+
+Hopefully, the rescue team will already be
+there, when you arrive... "
+music D_ITEXT
+
+// 5. Intertext Map 5 -> 6
+clusterdef 6
+entertext
+"With all ships gone and no reinforcements
+coming, you were forced to retreat - but
+where to??
+
+Unfortunately, the venting shaft above the
+fuel cell storage wasn't such a good idea
+and so you fell down right into the baneful
+haze and with it - 
+right into unconsciousness...
+"
+music D_ITEXT
+
+// 6. Intertext Map 6 -> 7
+clusterdef 7
+entertext
+"Was this a dream?
+
+What a nightmare!?
+
+Where are you now?"
+music D_ITEXT
+
+// 7. Intertext Map 7 -> 8
+clusterdef 8
+entertext
+"The UAC won't be too happy about that
+pulverized space station, but thats least
+of your problems right now.
+
+You managed to board the Lithium III and
+successfully undocked the airlock just in
+time, but due to the space station blast
+the Lithium III now floats through space
+aimlessly, its drives not operational at all.
+
+With your weapon readied you are determined
+to find the star chart to see where you are
+drifting into..."
+music D_ITEXT
+
+// 8. Intertext Map 8 -> 9
+clusterdef 9
+entertext
+"A space station destroyed, a starship blown
+to bits - what's next?
+
+Maybe you can wreck the planet below you too??
+
+That is, if you can land that escape pod
+Somewhere... "
+music D_ITEXT
+
+clusterdef 10
+entertext
+"Crawling around in pipes again!?
+At least it should hopefully lead
+you to some human installments!"
+music D_ITEXT
+
+clusterdef 11
+entertext
+"You don't know if the water is any cleaner
+now, but at least you purged the place.
+Let's see where this lonely road leads to..."
+music D_ITEXT
+
+clusterdef 12
+entertext
+"
+Through this underground tunnel you're
+about to reach some of your fellow
+marines, which are holding out somewhere
+nearby. While you stumble through merely
+darkness, one of them tunes in on your
+intercom:
+ 
+ 'Marine, the situation looks bleak! We are
+ cornered in an UAC research complex,
+ getting worn down!
+ Demons are pouring out of nowhere and all
+ defenses are offline, so we cannot hold
+ out much longer!'
+ 
+With all haste you find a way back to the
+surface...
+"
+music D_D2M01
+
+
+clusterdef 13
+entertext
+"
+As you kill the last remains of invaders
+you feel the earth shaking as if something
+is really pissed about your interference.
+
+But what is this place anyway? It looks like
+two dimensions are intertwining and you seem
+to lose grip to the real world. Your world.
+
+Once more, the only way out is through.
+Good thing you got your hands on some
+serious firepower by now.
+
+Suddenly everything around you blurs and
+the complex you came from vanishes into
+nothingness. Welcome back to hell...
+"
+music D_ITEXT
+
+
+clusterdef 14
+entertext
+"
+As much as you had wished those badasses
+were your ticket back and killing them
+put an end to all of this, you knew that
+they were just part of something much
+bigger.
+
+Actually they just guarded a portal,
+which will suck you deeper and deeper
+into hells abyss..."
+music D_ITEXT
+
+clusterdef 15
+entertext
+"
+So you've made it through all 13,5 levels.
+13,5? Yeah of course, map 14 isn't done
+yet. There's much more to come!
+
+Deeper twists into the story,
+more levels,
+more badass action...
+
+I really hope you had as much fun playing
+as I had creating this.
+
+STAY TUNED!"
+music D_ITEXT
+
+
+
+
+// MAP SECTION FOLLOWING
+map MAP01 "Outpost"
+music D_E2M6
+sky1 "SKY9" 0
+next MAP02
+cluster 1
+
+map MAP02 "Refinery"
+music D_CARGO
+sky1 "SKY9" 0
+next MAP03
+cluster 2
+
+map MAP03 "Sewage System"
+music D_SEWSYS
+sky1 "SKY9" 0
+next MAP04
+cluster 3
+
+map MAP04 "Hotspot"
+music D_SEWSYS
+sky1 "SKY9" 0
+next MAP05
+cluster 4
+
+map MAP05 "Hangar"
+music D_SEWSYS
+sky1 "SKY9" 0
+next MAP06
+cluster 5
+
+map MAP06 "Mental Struggle"
+music SPOOK
+sky1 "sky1" 0
+next MAP07
+cluster 6
+
+map MAP07 "Dread space"
+music D_E1M7
+sky1 "DARK0305" 0
+next MAP08
+cluster 7
+
+map MAP08 "Lithium III"
+music D_COUNTD
+sky1 "DARK0305" 0
+next MAP09
+cluster 8
+
+map MAP09 "Arrival"
+music D_E1M5
+sky1 "sky1" 0
+next MAP10
+cluster 9
+
+map MAP10 "Water treatment"
+music D_E2M7
+sky1 "sky1" 0
+next MAP11
+cluster 10
+
+map MAP11 "Crow Hill"
+music D_DOOM2
+sky1 "sky4" 0
+next MAP12
+cluster 11
+
+map MAP12 "UAC R'n'D"
+music D_MESSAG
+sky1 "sky4" 0
+next MAP13
+cluster 12
+
+map MAP13 "13"
+music D_E2M4
+//sky1 "NFCL41RD" 0 - USES SKYBOX!
+next MAP14
+cluster 13
+
+
+map MAP14 "A feast with the beast"
+music D_SHAWN2
+sky1 "sky2" 0
+next MAP15
+cluster 14
+
+map MAP15 "Ascendency"
+//music D_Runnin
+sky1 "sky10b" 0
+next MAP16
+cluster 15
+
+/*
+
+//D_THE_DA - final intertext (or end)
+
+
+map MAP16 "Work in progress"
+music D_TURNIT
+sky1 "sky2" 0
+next MAP17
+cluster 13
+
+map MAP17 "Work in progress"
+music D_INDIAN
+sky1 "sky3" 0
+next MAP18
+cluster 3
+
+map MAP18 "Work in progress"
+music D_BLACKE
+sky1 "sky3" 0
+next MAP19
+cluster 3
+
+map MAP19 "Work in progress"
+music D_MUCHTO
+sky1 "sky3" 0
+next MAP20
+cluster 3
+
+map MAP20 "Work in progress"
+music D_FAIRIE
+sky1 "sky3" 0
+next MAP21
+cluster 3
+
+map MAP21 "Work in progress"
+music D_TEHSUC
+sky1 "sky3" 0
+next MAP22
+cluster 3
+
+map MAP22 "Work in progress"
+music D_CRAPCA
+sky1 "sky3" 0
+next MAP23
+cluster 3
+
+map MAP23 "Work in progress"
+music D_ODETOA
+sky1 "sky3" 0
+next MAP24
+cluster 3
+
+map MAP24 "Work in progress"
+music D_MARIO1
+sky1 "sky3" 0
+next MAP25
+cluster 3
+
+map MAP25 "Work in progress"
+music D_HOOKER
+sky1 "sky4" 0
+next MAP26
+cluster 4
+
+map MAP26 "Work in progress"
+music D_DONALD
+sky1 "sky4" 0
+next MAP27
+cluster 4
+
+map MAP27 "Work in progress"
+music D_STTORN
+sky1 "sky4" 0
+next MAP28
+cluster 4
+
+map MAP28 "Work in progress"
+music D_BARONK
+sky1 "sky4" 0
+next MAP29
+cluster 4
+
+map MAP29 "Work in progress"
+music D_LETME
+sky1 "sky4" 0
+next MAP30
+cluster 4
+
+map MAP30 "Work in progress"
+music D_BESTES
+sky1 "sky4" 0
+next MAP41
+cluster 4
+
+map MAP31 "Map31"
+music D_CLOUDS
+sky1 "yks2" 0
+next MAP12
+secretnext MAP32
+cluster 5
+
+map MAP32 "Map32"
+music D_CLUELU
+sky1 "yks2" 0
+next MAP12
+secretnext MAP33
+cluster 6
+
+map map33 "Map33"
+music D_PH33R
+sky1 "sky5" 0
+next MAP12
+secretnext MAP34
+cluster 7
+
+map map34 "Map34"
+music D_TOMSR2
+sky1 "sky5" 0
+next MAP12
+secretnext MAP35
+cluster 8
+
+map map35 "Map35"
+music D_NERDPO
+sky1 "sky5" 0
+next MAP12
+secretnext MAP36
+cluster 9
+
+map map36 "Map36"
+music D_SUPERM
+sky1 "sky5" 0
+next MAP12
+secretnext MAP36
+cluster 10
+
+map map37 "Map37"
+music D_SHAVIR
+sky1 "sky5" 0
+next MAP12
+secretnext MAP38
+cluster 11
+
+map map38 "Map38"
+music D_BOOMWH
+sky1 "sky1" 0
+next MAP37
+cluster 12
+
+map map39 "Map39"
+music D_HYENA
+sky1 "skyfog" 0
+next MAP37
+cluster 13
+
+map map40 "Map40"
+music D_KILTOM
+sky1 "skyorg" 0
+allowmonstertelefrags
+next MAP37
+cluster 13
+
+map map41 "HYBRID"
+music D_SCREEM
+sky1 "sky1" 0
+next EndGameC
+cluster 4
+*/

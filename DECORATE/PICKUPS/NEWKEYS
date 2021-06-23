@@ -1,0 +1,183 @@
+//KEY CARDS
+
+Actor GreenCard : DoomKey 10000
+{
+	//$Category Keys
+	//$Title "Green Keycard"
+	Inventory.Pickupmessage "Picked up a green keycard."
+	Inventory.Icon "STKEYS18"
+	States
+	{
+	Spawn:
+		GKEY A 10
+		GKEY B 10 bright
+		loop
+	}
+}
+
+Actor OrangeCard : DoomKey 10001
+{
+	//$Category Keys
+	//$Title "Orange Keycard"
+	Inventory.Pickupmessage "Picked up an orange keycard."
+	Inventory.Icon "STKEYS20"
+	States
+	{
+	Spawn:
+		OKEY A 10
+		OKEY B 10 bright
+		loop
+	}
+}
+
+Actor SilverCard : DoomKey 10002
+{
+	//$Category Keys
+	//$Title "Silver Keycard"
+	Inventory.Pickupmessage "Picked up a silver keycard."
+	Inventory.Icon "STKEYS10"
+	States
+	{
+	Spawn:
+		SKEY A 10
+		SKEY B 10 bright
+		loop
+	}
+}
+
+Actor PinkCard : DoomKey 10003
+{
+	//$Category Keys
+	//$Title "Pink Keycard"
+	Inventory.Pickupmessage "Picked up a pink keycard."
+	Inventory.Icon "STKEYS12"
+	States
+	{
+	Spawn:
+		PKEY A 10
+		PKEY B 10 bright
+		loop
+	}
+}
+
+Actor BrownCard : DoomKey 10008
+{
+	//$Category Keys
+	//$Title "Brown Keycard"
+	Inventory.Pickupmessage "Picked up a brown keycard."
+	Inventory.Icon "STKEYS14"
+	States
+	{
+	Spawn:
+		BRKY A 10
+		BRKY B 10 bright
+		loop
+	}
+}
+
+Actor BlackCard : DoomKey 10009
+{
+	//$Category Keys
+	//$Title "Black Keycard"
+	Inventory.Pickupmessage "Picked up a black keycard."
+	Inventory.Icon "STKEYS16"
+	States
+	{
+	Spawn:
+		BKKY A 10
+		BKKY B 10 bright
+		loop
+	}
+}
+
+//SKULL KEYS
+
+Actor GreenSkull : DoomKey 10004
+{
+	//$Category Keys
+	//$Title "Green Skull Key"
+	Inventory.Pickupmessage "Picked up a green skull key."
+	Inventory.Icon "STKEYS19"
+	States
+	{
+	Spawn:
+		GSKU A 10
+		GSKU B 10 bright
+		loop
+	}
+}
+
+Actor OrangeSkull : DoomKey 10005
+{
+	//$Category Keys
+	//$Title "Orange Skull Key"
+	Inventory.Pickupmessage "Picked up an orange skull key."
+	Inventory.Icon "STKEYS21"
+	States
+	{
+	Spawn:
+		OSKU A 10
+		OSKU B 10 bright
+		loop
+	}
+}
+
+Actor SilverSkull : DoomKey 10006
+{
+	//$Category Keys
+	//$Title "Silver Skull Key"
+	Inventory.Pickupmessage "Picked up a silver skull key."
+	Inventory.Icon "STKEYS11"
+	States
+	{
+	Spawn:
+		SSKU A 10
+		SSKU B 10 bright
+		loop
+	}
+}
+
+Actor PinkSkull : DoomKey 10007
+{
+	//$Category Keys
+	//$Title "Pink Skull Key"
+	Inventory.Pickupmessage "Picked up a pink skull key."
+	Inventory.Icon "STKEYS13"
+	States
+	{
+	Spawn:
+		PSKU A 10
+		PSKU B 10 bright
+		loop
+	}
+}
+
+Actor BrownSkull : DoomKey 10010
+{
+	//$Category Keys
+	//$Title "Brown Skull Key"
+	Inventory.Pickupmessage "Picked up a brown skull key."
+	Inventory.Icon "STKEYS15"
+	States
+	{
+	Spawn:
+		BRSK A 10
+		BRSK B 10 bright
+		loop
+	}
+}
+
+Actor BlackSkull : DoomKey 10011
+{
+	//$Category Keys
+	//$Title "Black Skull Key"
+	Inventory.Pickupmessage "Picked up a black skull key."
+	Inventory.Icon "STKEYS17"
+	States
+	{
+	Spawn:
+		BKSK A 10
+		BKSK B 10 bright
+		loop
+	}
+}

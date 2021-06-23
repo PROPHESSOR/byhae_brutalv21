@@ -1,0 +1,364 @@
+
+
+Actor Trashcan 7389
+{
+//$Category Misc Deco
+Radius 12
+Height 32
+Scale 0.6
+Damagefactor "Trample", 0.0
+Mass 90000
+Painchance 255
+Health 750 
+//+INVULNERABLE - can't use this, no pain state possible then!
+//+PUSHABLE
++SOLID
++SHOOTABLE
++NOBLOOD
+states
+	{
+	Spawn:
+	  UTRS D 1
+	  Loop
+	
+	Pain:
+	TNT1 A 0
+	UTRS E 5 // the bin with the bump!
+	TNT1 A 0 A_CustomMissile ("SummonTrash", 30, 0, random (0,180), 2, random (50,120))
+	Goto Spawn
+	
+	Death:
+	TNT1 A 0 A_PlaySound ("VentBust")
+	TNT1 A 0 A_NoBlocking
+	TNT1 AAAAAAAAAAA 0 A_CustomMissile ("SummonTrash", 25, 0, random (0, 180), 2, random (50, 120))
+	TNT1 AAAAAAAA 0 A_CustomMissile ("TrashBinPiece", 25, 0, random (0, 180), 2, random (0, 180))
+	TNT1 A 0 A_CustomMissile ("TrashBinLid", 25, 0, random (0,180), 2, random (0, 180))
+	TNT1 A 0
+	Stop
+	}}
+	
+// Trash Pieces Randomizer
+Actor SummonTrash
+{
+Radius 0
+Height 0
+States
+	{
+	Spawn:
+	TNT1 A 0
+	TNT1 A 0 A_Jump(192,"Spawn2","Spawn2","Spawn3","Spawn3","Spawn4","Spawn4","Spawn5","Spawn6","Spawn7","Spawn7","Spawn8","Spawn9","Spawn10","Spawn11")
+	TNT1 A 0
+	Stop
+		
+
+	 Spawn2:
+		TNT1 A 0 A_CustomMissile("TrashApple", 0, 0, random (0, 360), 2, random (30, 150))
+		Stop
+	 Spawn3:
+		TNT1 A 0 A_CustomMissile("TrashPaper", 0, 0, random (0, 360), 2, random (30, 150))
+		Stop
+	 Spawn4:
+		TNT1 A 0 A_CustomMissile("TrashBottle", 0, 0, random (0, 360), 2, random (30, 150))
+		Stop
+	 Spawn5:
+		TNT1 A 0 A_CustomMissile("TrashEyeball", 0, 0, random (0, 360), 2, random (30, 150))
+		Stop
+	 Spawn6:
+		TNT1 A 0 A_CustomMissile("HealthPlus", 0, 0, random (0, 360), 2, random (30, 150))
+		Stop
+	 Spawn7: // Spawn nothing
+		TNT1 A 0
+		Stop
+	 Spawn8:
+		TNT1 A 0 A_CustomMissile("TrashCanRed", 0, 0, random (0, 360), 2, random (30, 150))
+		Stop
+	 Spawn9:
+		TNT1 A 0 A_CustomMissile("TrashCanGreen", 0, 0, random (0, 360), 2, random (30, 150))
+		Stop
+	Spawn10:
+		TNT1 A 0 A_CustomMissile("TrashCanBlue", 0, 0, random (0, 360), 2, random (30, 150))
+		Stop
+	Spawn11:
+		TNT1 A 0 A_CustomMissile("TrashCig", 0, 0, random (0, 360), 2, random (30, 150))
+		Stop
+	}
+}
+
+//Apple gullet
+Actor TrashApple
+{
+Scale 0.2
+bouncefactor 0.2
+speed 6
+seesound ""
+renderstyle translucent
+alpha 1.0
+	+DOOMBOUNCE
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+THRUACTORS
+	
+states
+	{
+	Spawn:
+	TNT1 A 0
+	APPL ABCD 4
+	loop
+	Death:
+      APPL A 1 A_Fadeout(0.005)
+      loop
+	}
+}
+
+//some crumbled paper
+Actor TrashPaper
+{
+scale 0.5
+bouncefactor 0.2
+speed 5
+seesound ""
+renderstyle translucent
+alpha 1.0
+	+DOOMBOUNCE
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+THRUACTORS
+
+states
+	{
+	Spawn:
+	TNT1 A 0
+	PAPR ABCD 4
+	loop
+	Death:
+      PAPR A 1 A_Fadeout(0.005)
+      loop
+	}
+}
+
+// flying eyeball (duke3d)
+Actor TrashEyeball
+{
+bouncefactor 0.25
+speed 7
+seesound ""
+renderstyle translucent
+alpha 1.0
+	+DOOMBOUNCE
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+THRUACTORS
+
+states
+	{
+	Spawn:
+	TNT1 A 0
+	TREB ABCD 4
+	loop
+	Death:
+      TREB E 1 A_Fadeout(0.005)
+      loop
+	}
+}
+
+// brown bottle (duke3d)
+Actor TrashBottle
+{
+scale 0.9
+bouncefactor 0.1
+speed 6
+seesound ""
+renderstyle translucent
+alpha 1.0
+	+DOOMBOUNCE
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+THRUACTORS
+
+states
+	{
+	Spawn:
+	TNT1 A 0
+	TRBT ABCD 4
+	loop
+	Death:
+      TRBT A 1 A_Fadeout(0.005)
+      loop
+	}
+}
+
+// grey piece of rubble
+Actor TrashBinPiece
+{
+scale 1.5
+bouncefactor 0.4
+speed 7
+seesound ""
+	+DOOMBOUNCE
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+THRUACTORS
+
+states
+	{
+	Spawn:
+	TNT1 A 0
+	TRBP ABC 4
+	loop
+	Death:
+      TRBP C 1 A_Fadeout(0.0025)
+      loop
+	}
+}
+
+// the red lid
+Actor TrashBinLid
+{
+bouncefactor 0.1
+speed 6
+seesound ""
+	+DOOMBOUNCE
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+
+states
+	{
+	Spawn:
+	TNT1 A 0
+	TRBD A 1
+	loop
+	Death:
+	TRBD A 1
+	TRBD A -1
+	stop
+	}}
+
+// Red soda can (credits to Action Doom II)
+Actor TrashCanRed
+{
+bouncefactor 0.25
+speed 7
+seesound ""
+renderstyle translucent
+alpha 1.0
+	+DOOMBOUNCE
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+THRUACTORS
+
+states
+	{
+	Spawn:
+	TNT1 A 0
+	CAN1 ABCD 4
+	loop
+	Death:
+      CAN1 A 1 A_Fadeout(0.005)
+      loop
+	}
+}
+// Green soda can (credits to Action Doom II)
+Actor TrashCanGreen
+{
+bouncefactor 0.25
+speed 7
+seesound ""
+renderstyle translucent
+alpha 1.0
+	+DOOMBOUNCE
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+THRUACTORS
+
+states
+	{
+	Spawn:
+	TNT1 A 0
+	CAN2 ABCD 4
+	loop
+	Death:
+      CAN2 A 1 A_Fadeout(0.005)
+      loop
+	}
+}
+
+// Blue soda can (credits to Action Doom II)
+Actor TrashCanBlue
+{
+bouncefactor 0.25
+speed 7
+seesound ""
+renderstyle translucent
+alpha 1.0
+	+DOOMBOUNCE
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+THRUACTORS
+
+states
+	{
+	Spawn:
+	TNT1 A 0
+	CAN3 ABCD 4
+	loop
+	Death:
+      CAN3 A 1 A_Fadeout(0.005)
+      loop
+	}
+}
+
+// Fluppe (credits to Action Doom II)
+Actor TrashCig
+{
+bouncefactor 0.25
+scale 0.3
+speed 7
+seesound ""
+renderstyle translucent
+alpha 1.0
+	+DOOMBOUNCE
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+THRUACTORS
+
+states
+	{
+	Spawn:
+	TNT1 A 0
+	KIPP A 1
+	loop
+	Death:
+      KIPP A 1 A_Fadeout(0.005)
+      loop
+	}
+}

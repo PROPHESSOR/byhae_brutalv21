@@ -1,0 +1,465 @@
+#include DECORATE/NEWPLAYE
+#include DECORATE/ALLTURRET	// 11009
+
+//#include DECORATE/CINDERPART // 30002 not compatible with Zandronum
+
+//SPECIAL FX STUFF
+#include DECORATE/SPECIFX/SFX 		// 7368 - 7416
+#include DECORATE/SPECIFX/DAMNSOUL // 30000
+#include DECORATE/SPECIFX/ASHPARTIC // 30001 fixed by Sgt Mark IV
+#include DECORATE/SPECIFX/LASBEAMS // fixed by SgtM4
+
+
+//DECORATIONS
+#include DECORATE/DECORS/SKULLZ		// 11000 - 11008
+#include DECORATE/DECORS/PLANTS 	// 7306 - 7366
+#include DECORATE/DECORS/CORPSES 	// 7295 - 7376
+#include DECORATE/DECORS/FLASKS 	// 7325 - 7342 
+#include DECORATE/DECORS/SPECIMEN 	// 7287 - 7294
+#include DECORATE/DECORS/TRASH		// 7389 (1 placeable yet)
+#include DECORATE/DECORS/EXCHAIR1	// 11020
+#include DECORATE/DECORS/MACHAIR	// 11021
+
+
+//GUNS GUNS GUNS
+#include DECORATE/GUNS/HELLGUN	// 11013
+#include DECORATE/GUNS/M2PLASMA	// 12000
+#include DECORATE/GUNS/FREEZER // 12001
+
+//MONSTERS
+#include DECORATE/BEASTIARY/LABGUY	// Lab Worker with axe 2846
+#include DECORATE/BEASTIARY/AFRIT // 2847
+#include DECORATE/BEASTIARY/HELLTROOPER // 2848
+#include DECORATE/BEASTIARY/ARCHON // 2849
+//PICKUPS
+#include DECORATE/PICKUPS/NEWKEYS 	// 10000 - 10011
+#include DECORATE/PICKUPS/COMPACK  // 23154
+
+//BEHAVIOR 
+#include DECORATE/RULES/DEMONPWR
+#include DECORATE/FROZEN
+
+
+Actor FreezerSelected: Inventory
+{inventory.maxamount 1}
+
+Actor HellRifleSelected: Inventory
+{inventory.maxamount 1}
+
+Actor M2Selected: Inventory
+{inventory.maxamount 1}
+
+Actor Fallingheight2 : Inventory
+{
+inventory.maxamount 100
+}
+
+
+// Duke Alien Barrel
+Actor FuelCell 590
+{
+//$Category TechStuff
+height 48
+radius 8
++SOLID
++SHOOTABLE
++NOBLOOD
+Health 25
+Scale 0.5
+states
+	{
+	Spawn:
+	    ABAR ABCB 5 bright
+		Loop
+	Death:
+	    TNT1 A 0
+		THRF A 0 A_SpawnItemEx ("Rocket",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		THRF A 0 A_SpawnItemEx ("Detonator",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		Stop
+	}
+}
+
+// Space Suit
+Actor SpaceSuitDN 600
+{
+//$Category TechStuff
+height 20
+radius 8
+states
+	{
+	Spawn:
+	    PUIT A 1
+		PUIT A -1
+		Stop
+	}
+}
+// Unconscious Doomguy
+ACTOR SleepingMarine 587
+{
+//$Category PowerUps
+    Radius 24
+    Height 48
+	deathheight 48
+    Speed 0
+	Mass 999999999999999999
+    Health 100
+    gravity 0.5
+	Decal BloodSuper
+    +SHOOTABLE
+    +SOLID
+	//MONSTER
+	//-COUNTKILL
+    Painchance 255
+    DamageType Taunt
+    damagefactor "Trample", 0.0
+    damagefactor "Cut", 10.0
+    damagefactor "Taunt", 0.0
+    damagefactor "headcut", 0.0
+    damagefactor "KillMe", 0.0
+    damagefactor "Fatality", 1.0
+    damagefactor "Melee", 1.0
+    damagefactor "Kick", 1.0
+	DeathSound "*death"
+	PainSound "*pain50"
+    BloodType "Nashgore_Blood"
+    States
+    {
+    Spawn:
+        C7PT ABCB 25
+        Loop
+
+    SetFree:
+    Death.Cut:
+    Death.Melee:
+	Death.SuperPunch:
+    Death.Fatality:
+	Death.ExtremePunches:
+    Death.Kick:
+		TNT1 A 0 A_Playsound ("TAUNT")
+		TNT1 A 0 A_ChangeFLag ("NOPAIN", 1)
+        PLST ABCDE 6
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_SpawnItem("Ally")
+        TNT1 A 0
+		TNT1 A 0 A_ChangeFLag ("SHOOTABLE", 0)
+		TNT1 A 0 A_ChangeFLag ("SOLID", 0)
+		TNT1 A 0 A_GiveToTarget("NumberOfAllies", 1)
+        TNT1 A 0
+        Stop
+    Pain:
+        TNT1 A 0
+        Goto Spawn
+    Death:
+        TNT1 A 0 A_Scream
+        TNT1 A 0 A_NoBlocking
+		C7PT EFGHIJ 7
+		TNT1 A 0 A_SpawnItem ("MediumBloodSpot")
+        C7PT J -1
+        Stop
+    }
+}
+// Burning Barrel (fire seethrough glass)
+Actor BurningBarrel2 : BurningBarrel 589
+{
+//$Category Lights
++LOOKALLAROUND
++SHOOTABLE
++INVULNERABLE
++NOBLOOD
+height 60
+states
+	{
+	Spawn:
+		TNT1 A 0 bright	A_CustomMissile
+		("RealFlameTrailsSmallLong", 38, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_CustomMissile ("ImBallGettingReady2", 35, 0, random (0, 140), 2, random (0, 160))
+		BURB A 3 bright A_SpawnItem("RedFlare3",0,32)		
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsSmallLong", 38, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_CustomMissile ("ImBallGettingReady2", 35, 0, random (0, 140), 2, random (0, 160))
+		BURB A 3 bright A_SpawnItem("RedFlare3",0,32)
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsSmallLong", 38, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_CustomMissile ("ImBallGettingReady2", 35, 0, random (0, 140), 2, random (0, 160))
+		BURB A 3 bright A_SpawnItem("RedFlare3",0,32)       		
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsSmallLong", 38, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_CustomMissile ("ImBallGettingReady2", 35, 0, random (0, 140), 2, random (0, 160))
+		BURB A 3 bright A_SpawnItem("RedFlare3",0,32)
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsSmallLong", 30, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_CustomMissile ("ImBallGettingReady2", 35, 0, random (0, 140), 2, random (0, 160))
+		BURB A 3 bright A_SpawnItem("RedFlare3",0,32)
+		Loop
+		}
+		}
+		
+// Candles (credit to Sgt. Mark_IV)
+Actor 3Candles 1319
+{
+//$Category Lights
+-SOLID
+Radius 8
+Height 8
+states
+	{
+	Spawn:
+	    HCND IJK 4
+		Loop
+	}
+}
+
+
+Actor Ceilabra 1320
+{
+//$Category Lights
+Radius 50
+Height 50
++NOGRAVITY
++SOLID
+states
+	{
+	Spawn:
+	    HCND ABC 3
+		Loop
+	}
+}
+// scripted by SGT Mark_IV
+ACTOR StockedShotgun : CustomInventory 7285
+{
+//$Category Weapons
+	Inventory.PickupMessage "$GOTSHOTGUN"
+	Inventory.PickupSound "weapons/sgpump"
+	States
+	{
+	Spawn:
+		Z7ST A 2
+		Loop
+	Pickup:
+        TNT1 A 0 A_GiveInventory ("shot_gun")
+		Stop
+	}
+}
+// scripted by SGT Mark_IV
+ACTOR StockedRifle : CustomInventory 7286
+{
+//$Category Weapons
+	Inventory.PickupMessage "You got the assault rifle! "
+	Inventory.PickupSound "CLIPIN"
+	States
+	{
+	Spawn:
+		Z7ST B 2
+		Loop
+	Pickup:
+        TNT1 A 0 A_GiveInventory ("Rifle")
+		Stop
+	}
+}
+
+
+// Grenade Launcher Pickup
+
+ACTOR GrenLauncher: Grenadelauncher
+{}
+
+ACTOR FixedGrenadeLauncher : CustomInventory replaces GrenLauncher 7304
+{
+  Game Doom
+  Radius 20
+  Height 16
+  States
+  {
+  Spawn:
+	TNT1 A 1
+	TNT1 A 0 A_SpawnItem("Grenadelauncher",0,0)
+	Stop
+  }
+}
+////////////////////////////////////
+// DECORATE Stuff by Sgt. Mark IV //
+////////////////////////////////////
+Actor BigFire 7305
+{
+//$Category Lights
+height 32
+radius 32
++NOCLIP
++NOBLOCKMAP
++LOOKALLAROUND
++CLIENTSIDEONLY
+Renderstyle Add
+Scale 1.5
+states
+	{
+	Spawn:
+	    TNT1 A 0
+        TNT1 A 0 A_Playsound("props/redfire")
+  		FIRE ABCDEFGH 2 bright
+        TTRB A 0 A_CustomMissile ("ExplosionSmoke", 80, 0, random (0, 180), 2, random (0, 180))
+		Loop
+	}
+}
+
+
+Actor HellFlag1 7318
+{
+//$Category Misc Deco
+Radius 8
+Height 48
+states
+	{
+	Spawn:
+	 HFLG A 1
+	    HFLG A -1
+		Stop
+	}}
+	
+Actor ToiletA 7319
+{
+//$Category Misc Deco
+	scale 0.65
+	Health 10
+	Mass 99999999
+	Radius 16
+	Height 48
+	+NOBLOOD
+	+FLOORCLIP
+	+SOLID
+	+SHOOTABLE
+	DeathSound "world/glassbreak"
+states
+	{
+	Spawn:
+	    TOLT A 1
+		TOLT A -1
+		Death:
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem ("ToiletB")
+		Stop
+	}}
+
+Actor ToiletB
+{
+	scale 0.65
+	Radius 16
+	Height 48
+states
+	{
+	Spawn:
+	    TOLT B 1
+		TOLT B -1
+		Stop
+	}}
+
+Actor HellFlag2 7321
+{
+//$Category Misc Deco
+Radius 8
+Height 48
++SOLID
+states
+	{
+	Spawn:
+	    CRUX C 1
+		CRUX C -1
+		Stop
+	}}
+	
+// 20.02.13
+// Roof lamps
+ACTOR TechLanternBig 7322
+{
+//$Category Lights
+	Radius 10
+	Height 80
+	+SPAWNCEILING
+	+NOGRAVITY
+	+SOLID
+	States
+	{
+	Spawn:
+		HLMP ABCD 6 //Light("BIGLANTERN")
+		Loop
+	}}
+ACTOR TechLanternSmall 7323
+{
+//$Category Lights
+	Radius 6
+	Height 45
+	+SPAWNCEILING
+	+NOGRAVITY
+	+SOLID
+	States
+	{
+	Spawn:
+		HLMP EFGH 6 //Light("SMALLLANTERN")
+		Loop
+	}}
+ACTOR BlackCandleChandelier 7324
+{
+//$Category Lights
+	Radius 20
+	Height 55
+	+SPAWNCEILING
+	+NOGRAVITY
+	+SOLID
+	States
+	{
+	Spawn:
+		HLMP I -1 //Light("BLACKCHANDELIER")
+		Stop
+	}}
+
+// Hellgrowth
+ACTOR HellGrowth 7346
+{
+//$Category Misc Deco
+  Radius 16
+  Height 56
+  +SOLID
+  States
+  {
+  Spawn:
+    HTRE A -1
+    Stop
+  }
+}
+
+ACTOR WellBucket 7370
+{
+//$Category Misc Deco
+	Radius 24
+	Height 80
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		BUCK A 1
+		BUCK A -1
+		Stop
+	}}
+// Credits to Kneedeep in ZDoom!
+ACTOR Microscope 13373
+{
+//$Category Techstuff
+Radius		2
+Height		8
+Mass		100
+Scale		.38
+-SOLID
++FLOORCLIP
+States
+{
+	Spawn:
+		SCOP A 1
+		SCOP A -1
+		Stop
+}}
+
+ACTOR AnybodyHitFloor : SecActHitFloor 23152
+{
+//$Category Sector
++AMBUSH
+}
+ACTOR AnybodyEnterSector : SecActEnter 23153
+{
+//$Category Sector
++AMBUSH
+}

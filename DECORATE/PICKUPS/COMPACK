@@ -1,0 +1,24 @@
+Actor CombatBackpack: Custominventory 23154
+{
+//$Category Ammunition
+	Game Doom
+	Height 26
+	-COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.PickupMessage "Found a combat backpack stuffed with ammo!"
+	States
+	{
+	Spawn:
+     CMPK A -1
+    stop
+    Pickup:
+      TNT1 A 0 A_GiveInventory("Clipbox", 190) //200 bullets
+	  TNT1 A 0 A_GiveInventory("Shellbox",36) //40 shells
+      TNT1 A 0 A_GiveInventory("Rocketbox",14) //15 rockets
+	  TNT1 A 0 A_GiveInventory("Cell",80) //100 plasma ammo
+	  TNT1 A 0 A_GiveInventory("Medikit",3) // 75% healing
+	//  TNT1 A 0 A_GiveInventory("Healthplus",10) // + 20% health over 100
+	  TNT1 A 0 A_GiveInventory("Backpack",1) // to grant double ammo capacity
+        Stop
+	}
+}

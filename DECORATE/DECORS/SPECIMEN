@@ -1,0 +1,112 @@
+// Floating Specimen Baron
+Actor SpeciBaron 7287
+{
+//$Category Specimen
+Radius 16
+Height 50
++NOGRAVITY
+states
+	{
+	Spawn:
+	    FTBA ABCDEFGFEDCB 8
+		Loop
+	}
+}
+// Floating Specimen Demon
+Actor SpeciDemon 7288
+{
+//$Category Specimen
+Radius 16
+Height 48
++NOGRAVITY
+states
+	{
+	Spawn:
+	    FTDE ABCDEFGFEDCB 8
+		Loop
+	}
+}
+// Floating Specimen Revenant
+Actor SpeciRevenant 7289
+{
+//$Category Specimen
+Radius 16
+Height 48
++NOGRAVITY
+states
+	{
+	Spawn:
+	    FTRE ABCDEFGFEDCB 8
+		Loop
+	}
+}
+// Floating Specimen Imp
+Actor SpeciImp 7290
+{
+//$Category Specimen
+Radius 16
+Height 48
++NOGRAVITY
+states
+	{
+	Spawn:
+	    FTIM ABCDEFGFEDCB 8
+		Loop
+	}
+}
+// Floating Specimen Hellknight
+Actor SpeciHellknight 7291
+{
+//$Category Specimen
+Radius 16
+Height 48
++NOGRAVITY
+states
+	{
+	Spawn:
+	    FTHK ABCDEFGFEDCB 8
+		Loop
+	}
+}
+// Floating Specimen ArchVile
+Actor SpeciArchi 7292
+{
+//$Category Specimen
+Radius 16
+Height 48
++NOGRAVITY
+states
+	{
+	Spawn:
+	    FTAV ABCDEFGFEDCB 8
+		Loop
+	}
+}
+// Floating Specimen Player
+Actor SpeciPlayer 7293
+{
+//$Category Specimen
+Radius 16
+Height 48
++NOGRAVITY
+states
+	{
+	Spawn:
+	    FTPL ABCDEFGFEDCB 12
+		Loop
+	}
+}
+// Specimen Player (no floating)
+Actor SpeciPlayerNF 7294
+{
+//$Category Specimen
+Radius 16
+Height 48
++NOGRAVITY
+states
+	{
+	Spawn:
+	    FTPL H 1
+		FTPL H -1
+		Stop
+}}

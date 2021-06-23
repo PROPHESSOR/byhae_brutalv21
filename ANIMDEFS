@@ -1,0 +1,226 @@
+warp flat SFLR7_1
+warp flat SFLR7_4
+
+texture HXPORT01
+pic HXPORT01 tics 4
+pic HXPORT02 tics 4
+pic HXPORT03 tics 4
+pic HXPORT04 tics 4
+pic HXPORT05 tics 4
+pic HXPORT06 tics 4
+pic HXPORT07 tics 4
+pic HXPORT08 tics 4
+pic HXPORT09 tics 4
+
+texture HXPORT09
+pic HXPORT09 tics 4
+pic HXPORT08 tics 4
+pic HXPORT07 tics 4
+pic HXPORT06 tics 4
+pic HXPORT05 tics 4
+pic HXPORT04 tics 4
+pic HXPORT03 tics 4
+pic HXPORT02 tics 4
+pic HXPORT01 tics 4
+
+warp2 texture damda0
+
+texture SCRDIMA
+pic SCRDIMA tics 25
+pic SCRDIMB tics 4
+pic SCRDIMC tics 4
+pic SCRDIMD tics 4
+pic SCRDIMA tics 30
+pic SCRDIME tics 3
+pic SCRDIMF tics 3
+pic SCRDIMG tics 3
+pic SCRDIMB tics 5
+pic SCRDIMC tics 5
+pic SCRDIMD tics 5
+pic SCRDIMA tics 15
+
+texture SCRDISA
+pic SCRDISA tics 3
+pic SCRDISB tics 3
+pic SCRDISC tics 3
+
+texture SCRERR
+pic SCRERR tics 8
+pic SCRBLK tics 8
+
+cameratexture CAMPX 128 64 fit 64 56
+
+texture ELEC1
+	pic ELEC1 tics 2
+	pic ELEC2 tics 2
+
+texture DNXLAS01
+pic 1 tics 2
+pic 2 tics 2
+pic 3 tics 2
+pic 4 tics 2
+
+texture BLDFALL1
+pic 1 tics 4
+pic 2 tics 4
+pic 3 tics 4
+pic 4 tics 4
+
+texture N_GFALL1
+pic 1 tics 8
+pic 2 tics 8
+pic 3 tics 8
+pic 4 tics 8
+
+texture NUKFALL1
+pic 1 tics 3
+pic 2 tics 3
+pic 3 tics 3
+pic 4 tics 3
+
+texture N_LFALL1
+pic 1 tics 8
+pic 2 tics 8
+pic 3 tics 8
+pic 4 tics 8
+
+texture N_MFALL1
+pic 1 tics 2
+pic 2 tics 2
+pic 3 tics 2
+pic 4 tics 2
+
+texture N_WFALL1
+pic 1 tics 3
+pic 2 tics 3
+pic 3 tics 3
+pic 4 tics 3
+
+texture ECG01
+pic ECG01 tics 5
+pic ECG02 tics 5
+pic ECG03 tics 5
+pic ECG04 tics 5
+
+flat NFGSLM01
+pic 1 tics 8
+pic 2 tics 8
+pic 3 tics 8
+pic 4 tics 8
+
+flat NFGSLM05
+pic 1 tics 8
+pic 2 tics 8
+pic 3 tics 8
+pic 4 tics 8
+
+flat NFLAVA05
+pic 1 tics 8
+pic 2 tics 8
+pic 3 tics 8
+pic 4 tics 8
+
+Switch LEVER1U on pic LEVER1D tics 0
+Switch LEVER1D on pic LEVER1U tics 0
+Switch TMTLSW1A on pic TMTLSW1B tics 0
+Switch TMTLSW2A on pic TMTLSW2B tics 0
+Switch TMTLSW3A on pic TMTLSW3B tics 0 
+Switch T2SW01A on pic T2SW01B tics 0
+Switch T2SW02A on pic T2SW02B tics 0
+Switch ADEL_Z50 on pic ADEL_Z51 tics 0
+Switch ADEL_Z51 on pic ADEL_Z50 tics 0
+Switch +0SWITCH on pic +1SWITCH tics 0
+Switch +1SWITCH on pic +0SWITCH tics 0
+
+warp flat TLAVFL0
+warp flat TSLIMEFL
+warp flat TWARP01
+warp flat TWARP02
+warp flat TWARP03
+warp flat TWARP04
+
+texture THEDWL1A
+   allowdecals
+   pic THEDWL1A tics 5
+   pic THEDWL1B tics 5
+   pic THEDWL1C tics 5
+   pic THEDWL1D tics 5
+   pic THEDWL1C tics 5
+   pic THEDWL1B tics 5
+   
+texture TLIGWL1A
+  allowdecals
+  pic TLIGWL1A tics 5
+  pic TLIGWL1B tics 5
+  pic TLIGWL1C tics 5
+  pic TLIGWL1D tics 5
+  pic TLIGWL1E tics 5
+  pic TLIGWL1D tics 5
+  pic TLIGWL1C tics 5
+  pic TLIGWl1B tics 5
+  
+  texture ARROW_R1
+  pic 1 tics 5
+  pic 2 tics 5
+  
+  texture N_FFLD1A
+	pic N_FFLD1A tics 5
+	pic N_FFLD1B tics 5
+	pic N_FFLD1C tics 5
+	pic N_FFLD1D tics 5
+	
+texture N_FIRE1
+	pic N_FIRE1 tics 5
+	pic N_FIRE2 tics 5
+	pic N_Fire3 tics 5
+	
+
+flat SLIME05
+	pic SLIME05 tics 8
+	pic SLIME06 tics 8
+	pic SLIME07 tics 8
+	pic SLIME08 tics 8
+	
+texture LAVFALL1
+	pic LAVFALL1 tics 8
+	pic LAVFALL2 tics 8
+	pic LAVFALL3 tics 8
+	pic LAVFALL4 tics 8
+	
+flat MLAVA1
+	pic MLAVA1 tics 6
+	pic MLAVA2 tics 6
+	pic MLAVA3 tics 6
+	pic MLAVA4 tics 6
+	
+flat HOTROCK1
+	pic HOTROCK1 tics 8
+	pic HOTROCK2 tics 8
+	pic HOTROCK3 tics 8
+	pic HOTROCK4 tics 8
+	pic HOTROCK3 tics 8
+	pic HOTROCK2 tics 8
+	
+texture SCRWA1
+	pic SCRWA1 tics 20
+	pic SCRWA2 tics 5
+	pic SCRWA1 tics 20
+	pic SCRWA2 tics 5
+	pic SCRWA1 tics 20
+	pic SCRWA2 tics 5
+	pic SCRWA3 tics 64
+	pic SCRWA2 tics 5
+	pic SCRWA4 tics 64
+	pic SCRWA2 tics 5
+
+texture TSCN1
+	pic TSCN1 tics 24
+	pic TSCN2 tics 16
+	pic TSCN3 tics 16
+	pic TSCN4 tics 16
+	
+texture FIREW1
+	pic FIREW1 tics 10
+	pic FIREW2 tics 10
+	pic FIREW3 tics 10
+	pic FIREW2 tics 10

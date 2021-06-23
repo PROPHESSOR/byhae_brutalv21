@@ -1,0 +1,16 @@
+clearplayerclasses
+addplayerclass NewDoomer
+addplayerclass Purist
+
+weaponsection "Brutal_Doom"
+
+setslot 1 Chain_Saw Melee_Attacks ClassicFist ClassicSaw
+setslot 2 DualRifles Rifle BrutalPistol Hell_rifle BrutalPistol ClassicPistol
+setslot 3 Shot_Gun SSG ClassicShotgun ClassicSSG
+setslot 4 MiniGun ClassicChaingun
+setslot 5 GrenadeLauncher Rocket_Launcher ClassicRocketLauncher
+setslot 6 Rail_Gun DualPlasmaRifles Plasma_Gun M2PlasmaRifle FreezerRifle ClassicPlasmaRifle
+setslot 7 BFG10000 BIG_FUCKING_GUN 
+setslot 8 HellishMissileLauncher
+setslot 9 FlameCannon
+setslot 0 SecretWeapon_MP40 HandGrenades

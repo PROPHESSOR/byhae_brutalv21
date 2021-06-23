@@ -1,0 +1,270 @@
+//Twin Minigun Turret
+
+ACTOR MinigunTurret 11009
+{
+  //$Category NewMarines
+  Health 2500
+  Radius 24
+  Height 48
+  Speed 0
+  Painchance 0
+  Damagefactor "Explosives", 75.0
+  Damagefactor "ExplosiveImpact", 75.0
+  Mass 10000000
+  obituary "%o was mowed down by a twin minigun turret."
+  deathsound "MGDIE"
+  Monster
+  +NOPAIN
+  +AMBUSH
+  +NOBLOOD
+  +NOSPLASHALERT
+  +FLOORCLIP
+  +LOOKALLAROUND
+  +QUICKTORETALIATE
+  +DONTGIB
+  //+FORCEXYBILLBOARD
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  //+FRIENDLY
+  //+STANDSTILL
+  -COUNTITEM
+  
+  States
+  {
+  Spawn:
+    MGTR AAAAA 1 A_Look
+    Loop
+  See:
+    MGTR A 1 A_Chase
+	TNT1 A 0 A_ClearTarget
+    goto spawn
+	
+
+Missile:
+	
+	MGTR A 0 A_FaceTarget 
+    TNT1 A 0 A_CustomMissile("OrangeLensFlareAltFast", 22, 10, 30, 0)
+	MGTR ABC 2 BRIGHT A_CustomMissile("MonsterMinigunTracer", 22, 10, random(-5, 5), 0)
+	TNT1 A 0 A_CustomMissile("OrangeLensFlareAltFast", 22, -10, 30, 0)
+	MGTR ABC 2 BRIGHT A_CustomMissile("MonsterMinigunTracer", 22, -10, random(-5, 5), 0)
+	TNT1 A 0 A_SpidRefire
+	Goto Missile+1
+	
+Death:
+    MGTR D 7
+	TNT1 AAA 0 A_CustomMissile("SpawnSpark_Up2", 17, 0, 0, 0)
+    MGTR E 7 A_Scream
+	MGTR E 0 A_PlaySound ("MGDIE")
+    MGTR F 7 A_NoBlocking
+    MGTR G 7
+    MGTR G -1
+    stop
+  }}
+  
+// This one is nasty!
+Actor AmokTurret: MinigunTurret 11010
+{
+Health 500
+States
+{
+Spawn:
+MGTR A 4 A_Look
+TNT1 A 0 A_ChangeFlag("FRIENDLY", 0)
+MGTR A 4 A_Look
+TNT1 A 0 A_ChangeFlag("FRIENDLY", 1)
+Loop
+}}
+
+ACTOR MarineTurretRifle: Marine 11111
+{
+//$Category NewMarines
++QUICKTORETALIATE
+-PUSHABLE
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  +LOOKALLAROUND
+  +FRIENDLY
+  -COUNTITEM
+Mass 9999999999999999999999
+    Speed 0
+	Radius 24
+    Health 400
+	//Monster
+	Dropitem "Rifle"
+	States
+	{
+  Spawn:
+	TNT1 A 0 A_ClearTarget
+    MTRF BBBCCBBBBBBA 10 A_Look
+    Loop
+  See:
+    MTRF BBBBBCCCCBBBBBBAA 5 A_Chase
+	
+	
+    Loop
+  Pain.Kick:
+  Goto Pain
+  
+  Pain:
+	PLAY G 10
+	TNT1 A 0 A_PlaySound("PAIN1", 2)
+		Goto Spawn
+	
+		Missile:
+		PLAY E 3 A_FaceTarget
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+        TNT1 A 0 A_PlaySound("weapons/rifle")
+		PLAY F 3 BRIGHT 
+		TNT1 AA 0 A_CustomMissile("MarineTracer", 36, 0, 0, 0)
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		CPOS E 0 A_CPosRefire
+        Goto Missile
+	}}
+
+
+
+ACTOR MarineTurretMinigun: Marine_Minigun 11113
+{
+//$Category NewMarines
++QUICKTORETALIATE
+-PUSHABLE
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  +LOOKALLAROUND
+  +FRIENDLY
+  -COUNTITEM
+Mass 9999999999999999999999
+    Speed 0
+	Radius 24
+    Health 400
+	//Monster
+	Dropitem "mini_gun"
+	States
+	{
+  Spawn:
+    MTMG BBBCCBBBBBBA 10 A_Look
+    Loop
+  See:
+    MTMG BBBBBCCCCBBBBBBAA 5 A_Chase
+	TNT1 A 0 A_ClearTarget	
+    Loop
+  Pain.Kick:
+  Goto Pain
+  
+  Pain:
+	MAR4 E 10
+	TNT1 A 0 A_PlaySound("PAIN1", 2)
+		Goto Spawn
+	
+	Missile:
+		MAR4 F 2 A_FaceTarget 
+		TNT1 A 0 A_PlaySound ("weapons/minigunfire")
+        TNT1 A 0 A_CustomMissile("YellowFlareSmall", 34, 10, 15, 0)
+        MAR4 G 2 BRIGHT A_CustomMissile("MarineTracer", 38, 0, random(-4, 4), 0)
+        TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		CPOS E 0 A_CPosRefire
+        Goto Missile+1
+	}}
+
+ACTOR MarineTurretShotgun: Marine_Shotgun 11112
+{
+//$Category NewMarines
++QUICKTORETALIATE
+-PUSHABLE
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  +LOOKALLAROUND
+  +FRIENDLY
+  -COUNTITEM
+Mass 9999999999999999999999
+    Speed 0
+	Radius 24
+    Health 400
+	//Monster
+	Dropitem "shot_gun"
+	States
+		{
+  Spawn:
+	TNT1 A 0 A_ClearTarget
+    MTSG BBBCCBBBBBBA 10 A_Look
+    Loop
+  See:
+     MTSG B 4 A_Chase
+	
+    loop
+	
+  Pain.Kick:
+  Goto Pain
+  
+  Pain:
+	MAR3 E 10
+	TNT1 A 0 A_PlaySound("PAIN1", 2)
+		Goto Spawn
+	Missile:
+		MAR3 F 10 A_FaceTarget
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+        TNT1 AAAAAAAA 0 A_CustomMissile("MarineTracer", random(32, 38), 0, random(-4, 4), 0)
+        TNT1 A 0 A_PlaySound("weapons/sg")
+		MAR3 G 5 BRIGHT
+		TNT1 A 0 A_SpawnItem ("ShotCaseSpawn", 0, 30,0)
+		PLAY E 10 A_FaceTarget
+        TNT1 A 0 A_PlaySound("weapons/sgpump")
+        Goto Spawn
+	}
+}
+
+ACTOR RifleGuard: MarineTurretRifle 11114
+{
+//$Category NewMarines
++QUICKTORETALIATE
+-PUSHABLE
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  +LOOKALLAROUND
+  +FRIENDLY
+Mass 9999999999999999999999
+    Speed 0
+	Radius 24
+    Health 400
+	//Monster
+	States
+	{
+  Spawn:
+	TNT1 A 0 A_ClearTarget
+	TNT1 A 0 A_Jump(48, "LookAround1","LookAround2")
+    SGUA AAAAAA 10 A_Look
+    Loop
+  See:
+    SGUA A 5 A_Chase
+	loop
+	
+LookAround1:
+	SGUA BACDC 15 A_Look
+	goto Spawn
+	
+LookAround2:
+	SGUA CDCAB 15 A_Look
+	goto Spawn
+
+  Pain.Kick:
+  Goto Pain
+  
+  Pain:
+	PLAY G 15
+	TNT1 A 0 A_PlaySound("PAIN1", 2)
+		Goto Spawn
+	
+		Missile:
+		PLAY E 3 A_FaceTarget
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+        TNT1 A 0 A_PlaySound("weapons/rifle")
+		PLAY F 3 BRIGHT 
+		TNT1 AA 0 A_CustomMissile("MarineTracer", 36, 0, 0, 0)
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		CPOS E 0 A_CPosRefire
+        Goto Missile
+	}}
+
