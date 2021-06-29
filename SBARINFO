@@ -1,31 +1,35 @@
-// Newschool Classic HUD
-// By Sergeant_Mark_IV
-// Keyslots modified by Das_M
-
 //blehblehbleh
-base Doom;
+//base Doom;
 height 32;
-monospacefonts false, "0";
+monospacefonts true, "0";
+Resolution 320,200;
 
-// Fullscreen HUD
 statusbar fullscreen
 {
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// SIMPLE 4:3
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+InInventory sbartype2, 1
+{
+
 // Keys
 	//drawimage "KEYS", 304, 0;
-	drawswitchableimage BlueCard && BlueSkull, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 46, 190;
-	drawswitchableimage YellowCard && YellowSkull, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 56, 190;
-	drawswitchableimage RedCard && RedSkull, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 66, 190;
-//Custom ones following
-	drawswitchableimage SilverCard && SilverSkull, "nullimage", "STKEYS10", "STKEYS11", "STKEYS22", 76, 190;
-	drawswitchableimage PinkCard && PinkSkull, "nullimage", "STKEYS12", "STKEYS13", "STKEYS23", 86, 190;
-	drawswitchableimage BrownCard && BrownSkull, "nullimage", "STKEYS14", "STKEYS15", "STKEYS24", 96, 190;
-	drawswitchableimage BlackCard && BlackSkull, "nullimage", "STKEYS16", "STKEYS17", "STKEYS25", 106, 190;
-	drawswitchableimage GreenCard && GreenSkull, "nullimage", "STKEYS18", "STKEYS19", "STKEYS26", 116, 190;
-	drawswitchableimage OrangeCard && OrangeSkull, "nullimage", "STKEYS20", "STKEYS21", "STKEYS27", 126, 190;
+	drawswitchableimage bluecard && blueSkull, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 60, 185;
+	drawswitchableimage yellowcard && yellowSkull, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 70, 185;
+	drawswitchableimage redCard && redSkull, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 80, 185;
+// BYHAE custom keys
+	drawswitchableimage SilverCard && SilverSkull, "nullimage", "STKEYS10", "STKEYS11", "STKEYS22", 90, 185;
+	drawswitchableimage PinkCard && PinkSkull, "nullimage", "STKEYS12", "STKEYS13", "STKEYS23", 100, 185;
+	drawswitchableimage BrownCard && BrownSkull, "nullimage", "STKEYS14", "STKEYS15", "STKEYS24", 110, 185;
+	drawswitchableimage BlackCard && BlackSkull, "nullimage", "STKEYS16", "STKEYS17", "STKEYS25", 120, 185;
+	drawswitchableimage GreenCard && GreenSkull, "nullimage", "STKEYS18", "STKEYS19", "STKEYS26", 130, 185;
+	drawswitchableimage OrangeCard && OrangeSkull, "nullimage", "STKEYS20", "STKEYS21", "STKEYS27", 140, 185;
 
 
 // Inventory Items
-	drawselectedinventory alternateonempty, SMALLFONT, 240, 169
+	drawselectedinventory alternateonempty, SMALLFONT, 200, 169
 	{
 		drawmugshot "STF", 5, 1143, 1168;
 	}
@@ -34,32 +38,148 @@ statusbar fullscreen
 
 // Armor
 	//drawimage armoricon, 78, 200; next to the mugshot
-	drawimage armoricon, 16, 188;
-        drawnumber 4, BIGFONT, red, armor, drawshadow, 30, 188;
+		drawimage armoricon, 48, 186;
+        drawnumber 6, SMALLFONT, green, armor, drawshadow | whennotzero, 60, 188, 0, yellow, 10, blue, 100;
+		
+		drawnumber 2, INDEXFONT, blue, SavePercent, whennotzero, 60, 182, 0, green, 46, red, 65;
 
-
-        drawmugshot 5, -40, 155;
-//        drawmugshot 5, 0, 108;
+        
 // Health
-//drawimage "HEALTH", 0, 168;
-        drawnumber 4, BIGFONT, red, health, drawshadow, -15, 188;
+		
+		
+		//Berserk
+		InInventory PowerStrength
+		{
+		DrawImage "HASBERK", 2, 154;
+		}
+		
+		
+		InInventory GenderMale, 1
+		{
+		drawmugshot "STM", 5, 2, 154;
+		}
+		
+		InInventory GenderFemale, 1
+		{
+		drawmugshot "GAL", 5, -2, 154;
+		}
+		
+        drawnumber 6, SMALLFONT, yellow, health, drawshadow, 30, 188, 0, red, 40, green, 71;
 
 
 //		drawimage translatable "STFBANY", 58, 169;
 
 	//drawimage "ARTIAMMO", 278, 159;
 
-	drawimage ammoicon2, 350, 181;
-	drawimage ammoicon1, 310, 181;
+		drawimage ammoicon2, 240, 181;
+		drawnumber 4, DIGINUMBER, red, ammo2, 250, 185, 0;
+		
+		drawimage ammoicon1, 300, 181;
+		drawnumber 4, DIGINUMBER, red, ammo1, 310, 185, 0;
 
-	drawimage "ARTICAS2", 0, 124;
+		drawimage "ARTICAS2", 0, 124;
 
-        drawnumber 4, BIGFONT, red, ammo1, 320, 185, 0;
-        drawnumber 4, BIGFONT, red, ammo2, 360, 185, 0;
+        
+        
+		
+	//STAMINA	
+	drawnumber 4, SMALLFONT, white, Ammo UsedStamina, whennotzero | interpolate(4), 166, 190, 0;
+	
+	
+	//RADSUIT
+	drawnumber 4, SMALLFONT, green, PowerupTime RadSuit, whennotzero, 166, 182, 0;
+	
+	//INVULNERABILITY
+	drawnumber 4, SMALLFONT, Black, PowerupTime InvulnerabilitySphere, whennotzero, 166, 182, 0;
+	
+	//INVISIBILITY
+	drawnumber 4, SMALLFONT, Blue, PowerupTime BlurSphere, whennotzero, 166, 176, 0;
+	
+	//INFRARED
+	drawnumber 4, SMALLFONT, Blue, PowerupTime ArtiTorch, whennotzero, 166, 168, 0;
+	
+	
+	//GRENADES
+	drawimage "GRNDA", 294, 160;
+	drawnumber 4, SMALLFONT, red, Ammo GrenadeAmmo, 300, 150, 0;
 
 
 	gamemode deathmatch, teamgame
+		{
+     	drawnumber 8, SMALLFONT, darkred, frags, 302, 8;
+       DrawString SMALLFONT, darkred, "Frags", 302, 0;
+   
+        }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Minimal
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+InInventory sbartype3, 1
+{
+
+// Keys
+	//drawimage "KEYS", 304, 0;
+	drawswitchableimage bluecard && blueSkull, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 80, 192;
+	drawswitchableimage yellowcard && yellowSkull, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 90, 192;
+	drawswitchableimage redCard && redSkull, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 100, 192;
+// BYHAE custom keys
+	drawswitchableimage SilverCard && SilverSkull, "nullimage", "STKEYS10", "STKEYS11", "STKEYS22", 110, 192;
+	drawswitchableimage PinkCard && PinkSkull, "nullimage", "STKEYS12", "STKEYS13", "STKEYS23", 120, 192;
+	drawswitchableimage BrownCard && BrownSkull, "nullimage", "STKEYS14", "STKEYS15", "STKEYS24", 130, 192;
+	drawswitchableimage BlackCard && BlackSkull, "nullimage", "STKEYS16", "STKEYS17", "STKEYS25", 140, 192;
+	drawswitchableimage GreenCard && GreenSkull, "nullimage", "STKEYS18", "STKEYS19", "STKEYS26", 150, 192;
+	drawswitchableimage OrangeCard && OrangeSkull, "nullimage", "STKEYS20", "STKEYS21", "STKEYS27", 160, 192;
+
+
+// Inventory Items
+	drawselectedinventory alternateonempty, SMALLFONT, 200, 169
 	{
+		drawmugshot "STF", 5, 1143, 1168;
+	}
+
+
+
+// Armor
+
+        drawnumber 6, BIGFONT, green, armor, whennotzero, 80, 185, 0, yellow, 10, blue, 100;
+// Health
+        drawnumber 6, BIGFONT, yellow, health, whennotzero, 35, 185, 0, red, 40, green, 71;
+
+//Ammo
+		drawnumber 4, BIGFONT, red, ammo2, 250, 185, 0;
+		drawnumber 4, BIGFONT, red, ammo1, 310, 185, 0;
+
+		drawimage "ARTICAS2", 0, 124;
+		
+
+		
+		drawimage "ARTICAS2", 0, 124;
+
+
+	drawimage "GRNDA", 335, 190;
+	drawnumber 4, SMALLFONT, red, Ammo GrenadeAmmo, 340, 190, 0;
+
+
+	//STAMINA	
+	drawnumber 4, SMALLFONT, white, Ammo UsedStamina, whennotzero | interpolate(4), 166, 190, 0;
+	
+	
+	//RADSUIT
+	drawnumber 4, SMALLFONT, green, PowerupTime RADSUIT3, whennotzero, 166, 182, 0;
+	
+	//INVULNERABILITY
+	drawnumber 4, SMALLFONT, Black, PowerupTime InvulnerabilitySphere, whennotzero, 166, 182, 0;
+	
+	//INVISIBILITY
+	drawnumber 4, SMALLFONT, Blue, PowerupTime BlurSphere, whennotzero, 166, 176, 0;
+	
+	//INFRARED
+	drawnumber 4, SMALLFONT, Blue, PowerupTime ArtiTorch, whennotzero, 166, 168, 0;
+	
+	gamemode deathmatch, teamgame
+		{
      	drawnumber 8, SMALLFONT, darkred, frags, 302, 8;
        DrawString SMALLFONT, darkred, "Frags", 302, 0;
    
@@ -69,11 +189,229 @@ statusbar fullscreen
 
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Doom Nukem's Full Helmet
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+InInventory sbartype4, 1
+{
+	// basic layout
+	DrawImage "PLAYSCRN", -54, 0;
+	Alpha 0.5
+	
+
+	// health and armor bars
+	Alpha 0.75
+	DrawBar "HealthFu", "HealthEm", Health, horizontal, interpolate(8), 22, 159;
+	Alpha 0.75
+	DrawNumber 3, DIGIFONT_SMALL, DoomNukemStatusBarGreen, Health, Alignment(right), fillzeros, 68, 168;
+	DrawBar "ArmorFul", "ArmorEmp", Armor, horizontal, interpolate(8), 21, 174;
+	Alpha 0.75
+	DrawNumber 3, DIGIFONT_SMALL, DoomNukemStatusBarGreen, Armor, Alignment(right), fillzeros, 71, 179;
+
+	// ammo bar
+	Alpha 0.75
+	
+	UsesSecondaryAmmo
+	{
+	DrawNumber 3, DIGIFONT_LARGE, DoomNukemStatusBarGreen, Ammo2, Alignment(left), fillzeros, 247, 172;
+	DrawNumber 3, DIGIFONT_SMALL, DoomNukemStatusBarGreen, Ammo1, Alignment(left), fillzeros, 282, 178;
+	}
+	
+	UsesSecondaryAmmo not
+	{
+	DrawNumber 3, DIGIFONT_LARGE, DoomNukemStatusBarGreen, Ammo1, Alignment(left), fillzeros, 257, 172;
+	}
+	
+	// level stats
+	Alpha 0.75
+	drawnumber 4, AMMOFONT, DoomNukemIndexGreen, kills, drawshadow(2, 2), 73, 24;
+	Alpha 0.75
+	drawnumber 4, AMMOFONT, DoomNukemIndexGreen, monsters, Alignment(left), drawshadow(2, 2), 81, 24;
+	Alpha 0.75
+	drawnumber 3, AMMOFONT, DoomNukemIndexGreen, items, drawshadow(2, 2), 73, 31;
+	Alpha 0.75
+	drawnumber 3, AMMOFONT, DoomNukemIndexGreen, totalitems, Alignment(left), drawshadow(2, 2), 81, 31;
+	Alpha 0.75
+	drawnumber 2, AMMOFONT, DoomNukemIndexGreen, secrets, drawshadow(2, 2), 79, 38;
+	Alpha 0.75
+	drawnumber 2, AMMOFONT, DoomNukemIndexGreen, totalsecrets, Alignment(left), drawshadow(2, 2), 86, 38;
+
+	// keys
+	DrawKeyBar 1, horizontal, 9, 252, 32, 0;
+	DrawKeyBar 1, horizontal, 9, 259, 31, 1;
+	DrawKeyBar 1, horizontal, 9, 266, 30, 2;
+	DrawKeyBar 1, horizontal, 9, 273, 29, 3;
+	DrawKeyBar 1, horizontal, 9, 280, 28, 4;
+	DrawKeyBar 1, horizontal, 9, 287, 27, 5;
+
+	DrawKeyBar 1, horizontal, 9, 252, 40, 6;
+	DrawKeyBar 1, horizontal, 9, 259, 39, 7;
+	DrawKeyBar 1, horizontal, 9, 266, 38, 8;
+	DrawKeyBar 1, horizontal, 9, 273, 37, 9;
+	DrawKeyBar 1, horizontal, 9, 280, 36, 10;
+	DrawKeyBar 1, horizontal, 9, 287, 35, 11;
+
+	DrawKeyBar 1, horizontal, 9, 252, 48, 12;
+	DrawKeyBar 1, horizontal, 9, 259, 47, 13;
+	DrawKeyBar 1, horizontal, 9, 266, 46, 14;
+	DrawKeyBar 1, horizontal, 9, 273, 45, 15;
+	DrawKeyBar 1, horizontal, 9, 280, 44, 16;
+	DrawKeyBar 1, horizontal, 9, 287, 43, 17;
+	
+	//STAMINA	
+	drawnumber 4, SMALLFONT, white, Ammo UsedStamina, whennotzero | interpolate(4), 166, 190, 0;
+	
+	
+	//RADSUIT
+	drawnumber 4, SMALLFONT, green, PowerupTime RADSUIT3, whennotzero, 166, 182, 0;
+	
+	//INVULNERABILITY
+	drawnumber 4, SMALLFONT, Black, PowerupTime InvulnerabilitySphere, whennotzero, 166, 182, 0;
+	
+	//INVISIBILITY
+	drawnumber 4, SMALLFONT, Blue, PowerupTime BlurSphere, whennotzero, 166, 176, 0;
+	
+	//INFRARED
+	drawnumber 4, SMALLFONT, Blue, PowerupTime ArtiTorch, whennotzero, 166, 168, 0;
+
+	// hud face :)
+
+		InInventory GenderMale, 1
+		{
+		DrawImage "HEADSUP", -54, 0;
+		drawmugshot "STM", 5, 176, 7;
+		}
+		
+		InInventory GenderFemale, 1
+		{
+		DrawImage "HEADSUP2", -54, 0;
+		drawmugshot "GAL", 5, 176, 7;
+		}
+		
+		InInventory PowerStrength
+		{
+		DrawImage "HASBERK", -54, 7;
+		}		
+}	
 
 
 
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// SIMPLE 16:9
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Checks if none of other HUDs are being used, making this one the default one.
+//Previously it used to check a sbartype1 token, but this system didn't work when spectating a player
+//in zandronum, showing no HUD at all.
+InInventory not sbartype2, 1
+{
+InInventory not sbartype3, 1
+{
+InInventory not sbartype4, 1
+{
+
+
+
+
+// Keys
+	//drawimage "KEYS", 304, 0;
+	drawswitchableimage bluecard && blueSkull, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 56, 185;
+	drawswitchableimage yellowcard && yellowSkull, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 66, 185;
+	drawswitchableimage redCard && redSkull, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 76, 185;
+// BYHAE custom keys
+	drawswitchableimage SilverCard && SilverSkull, "nullimage", "STKEYS10", "STKEYS11", "STKEYS22", 86, 185;
+	drawswitchableimage PinkCard && PinkSkull, "nullimage", "STKEYS12", "STKEYS13", "STKEYS23", 96, 185;
+	drawswitchableimage BrownCard && BrownSkull, "nullimage", "STKEYS14", "STKEYS15", "STKEYS24", 106, 185;
+	drawswitchableimage BlackCard && BlackSkull, "nullimage", "STKEYS16", "STKEYS17", "STKEYS25", 116, 185;
+	drawswitchableimage GreenCard && GreenSkull, "nullimage", "STKEYS18", "STKEYS19", "STKEYS26", 126, 185;
+	drawswitchableimage OrangeCard && OrangeSkull, "nullimage", "STKEYS20", "STKEYS21", "STKEYS27", 136, 185;
+
+
+// Inventory Items
+	drawselectedinventory alternateonempty, SMALLFONT, 240, 169
+	{
+		drawmugshot "STF", 5, 1143, 1168;
+	}
+
+
+// Armor
+	//drawimage armoricon, 78, 200; next to the mugshot
+		drawimage armoricon, 33, 186;
+        drawnumber 6, SMALLFONT, green, armor, drawshadow | whennotzero, 45, 188, 0, yellow, 10, blue, 100;
+		
+		drawnumber 2, INDEXFONT, blue, SavePercent, whennotzero, 45, 182, 0, green, 46, red, 65;
+
+// Health
+		
+		InInventory GenderMale, 1
+		{
+		drawmugshot "STM", 5, -25, 154;
+		}
+		
+		InInventory GenderFemale, 1
+		{
+		drawmugshot "GAL", 5, -25, 154;
+		}
+		
+		InInventory PowerStrength
+		{
+		DrawImage "HASBERK", -25, 154;
+		}		
+		
+        drawnumber 6, SMALLFONT, yellow, health, drawshadow, 0, 188, 0, red, 40, green, 71;
+
+
+//		drawimage translatable "STFBANY", 58, 169;
+
+	//drawimage "ARTIAMMO", 278, 159;
+
+		drawimage ammoicon2, 290, 181;
+		drawnumber 4, DIGINUMBER, red, ammo2, 290, 185, 0;
+		
+		drawimage ammoicon1, 330, 181;
+		drawnumber 4, DIGINUMBER, red, ammo1, 340, 185, 0;
+
+		drawimage "ARTICAS2", 0, 124;
+
+        
+        
+		
+	//STAMINA	
+	drawnumber 4, SMALLFONT, white, Ammo UsedStamina, whennotzero | interpolate(4), 166, 190, 0;
+	
+	
+	//RADSUIT
+	drawnumber 4, SMALLFONT, green, PowerupTime RADSUIT3, whennotzero, 166, 182, 0;
+	
+	//INVULNERABILITY
+	drawnumber 4, SMALLFONT, Black, PowerupTime InvulnerabilitySphere, whennotzero, 166, 182, 0;
+	
+	//INVISIBILITY
+	drawnumber 4, SMALLFONT, Blue, PowerupTime BlurSphere, whennotzero, 166, 176, 0;
+	
+	//INFRARED
+	drawnumber 4, SMALLFONT, Blue, PowerupTime ArtiTorch, whennotzero, 166, 168, 0;
+	
+	
+	//GRENADES
+	drawimage "GRNDA", 255, 195;
+	drawnumber 4, SMALLFONT, red, Ammo GrenadeAmmo, 260, 185, 0;
+	
+	
+	gamemode deathmatch, teamgame
+	{
+     	drawnumber 8, SMALLFONT, darkred, frags, 302, 8;
+       DrawString SMALLFONT, darkred, "Frags", 302, 0;
+   
+    }
+}}}	
+//}
+
+
+//////////////////////////////////////////////////////////////////
+//End Statusbar
+}
 
 
 statusbar normal // Standard Doom Status bar
@@ -86,40 +424,76 @@ statusbar normal // Standard Doom Status bar
 	drawnumber 3, HUDFONT_DOOM, untranslated, armor, 221, 171;
 
 	//keys
-	drawswitchableimage keyslot 2 && 5, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 239, 171;
-	drawswitchableimage keyslot 3 && 6, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 239, 181;
-	drawswitchableimage keyslot 1 && 4, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 239, 191;
+	drawswitchableimage keyslot 2 && 5, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 235, 171;
+	drawswitchableimage keyslot 3 && 6, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 235, 181;
+	drawswitchableimage keyslot 1 && 4, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 235, 191;
+// BYHAE custom keys
+	drawswitchableimage SilverCard && SilverSkull, "nullimage", "STKEYS10", "STKEYS11", "STKEYS22", 240, 171;
+	drawswitchableimage PinkCard && PinkSkull, "nullimage", "STKEYS12", "STKEYS13", "STKEYS23",     240, 181;
+	drawswitchableimage BrownCard && BrownSkull, "nullimage", "STKEYS14", "STKEYS15", "STKEYS24",   240, 191;
 
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo Clip, 288, 173;
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo Shell, 288, 179;
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo RocketAmmo, 288, 185;
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo Cell, 288, 191;
+	drawswitchableimage BlackCard && BlackSkull, "nullimage", "STKEYS17", "STKEYS17", "STKEYS25",   245, 171;
+	drawswitchableimage GreenCard && GreenSkull, "nullimage", "STKEYS18", "STKEYS19", "STKEYS26",   245, 181;
+	drawswitchableimage OrangeCard && OrangeSkull, "nullimage", "STKEYS20", "STKEYS21", "STKEYS27", 245, 191;
 
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity Clip, 314, 173;
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity Shell, 314, 179;
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity RocketAmmo, 314, 185;
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity Cell, 314, 191;
+	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo Clip2, 288, 173;
+	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo AmmoShell, 288, 179;
+	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo AmmoRocket, 288, 185;
+	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo AmmoCell, 288, 191;
+
+	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity Clip2, 314, 173;
+	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity AmmoShell, 314, 179;
+	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity AmmoRocket, 314, 185;
+	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity AmmoCell, 314, 191;
 	gamemode deathmatch, teamgame
 	{
 		drawnumber 2, HUDFONT_DOOM, untranslated, frags, 138, 171;
 	}
-	gamemode cooperative, singleplayer
-	{
-		drawimage "STARMS", 104, 168;
-		drawswitchableimage weaponslot 2, "STGNUM2", "STYSNUM2", 111, 172; 
-		drawswitchableimage weaponslot 3, "STGNUM3", "STYSNUM3", 123, 172;
-		drawswitchableimage weaponslot 4, "STGNUM4", "STYSNUM4", 135, 172;
-		drawswitchableimage weaponslot 5, "STGNUM5", "STYSNUM5", 111, 182;
-		drawswitchableimage weaponslot 6, "STGNUM6", "STYSNUM6", 123, 182;
-		drawswitchableimage weaponslot 7, "STGNUM7", "STYSNUM7", 135, 182;
-	}
-	gamemode cooperative, deathmatch, teamgame
-	{
-		drawimage translatable "STFBANY", 143, 169;
-	}
+	
+	
+	//STAMINA	
+	drawnumber 4, SMALLFONT, white, Ammo UsedStamina, whennotzero | interpolate(4), 160, 160, 0;
+	
+	
+	//RADSUIT
+	drawnumber 4, SMALLFONT, green, PowerupTime RadSuit, whennotzero, 20, 160, 0;
+	
+	//INVULNERABILITY
+	drawnumber 4, SMALLFONT, Black, PowerupTime InvulnerabilitySphere, whennotzero, 40, 160, 0;
+	
+	//INVISIBILITY
+	drawnumber 4, SMALLFONT, Blue, PowerupTime BlurSphere, whennotzero, 60, 160, 0;
+	
+	//INFRARED
+	drawnumber 4, SMALLFONT, White, PowerupTime ArtiTorch, whennotzero, 80, 160, 0;
+	
+	
+	//GRENADES
+	drawimage "GRNDA", 335, 195;
+	drawnumber 4, SMALLFONT, red, Ammo GrenadeAmmo, 340, 185, 0;
+
+	
+	drawimage "STARMS", 104, 168;
+	drawnumber 3, DIGINUMBER, untranslated, ammo2, fillzeros, 141, 173;
+	
+	
+	InInventory PowerStrength
+		{
+		DrawImage "HASBERK", 143, 168;
+		}		
+	
 	drawselectedinventory alternateonempty, INDEXFONT, 143, 168
 	{
-		drawmugshot "STF", 5, 143, 168;
+
+		InInventory GenderMale, 1
+		{
+		drawmugshot "STM", 5, 143, 168;
+		}
+		
+		InInventory GenderFemale, 1
+		{
+		drawmugshot "GAL", 5, 143, 168;
+		}
 	}
 }
 
@@ -132,3 +506,9 @@ statusbar inventoryfullscreen // ZDoom HUD overlay.
 {
 	drawinventorybar Doom, translucent, 7, INDEXFONT, 50, 170;
 }
+
+
+
+
+
+
