@@ -138,7 +138,7 @@ ACTOR SleepingMarine 587
 	Death.Slide:
 		TNT1 A 0 A_Playsound ("TAUNT")
 		TNT1 A 0 A_ChangeFLag ("NOPAIN", 1)
-        PLST ABCDE 6
+        MLST ABCDE 6
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_SpawnItem("Ally")
         TNT1 A 0
