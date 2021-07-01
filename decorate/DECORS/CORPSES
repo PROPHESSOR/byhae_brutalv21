@@ -1,5 +1,17 @@
+Actor CorpsesDrops
+{
+	DropItem "HealthPlusNoCount" 128
+	DropItem "HealthPlusNoCount" 128
+	DropItem "ArmorShardNoCount" 128
+	DropItem "ArmorShardNoCount" 128
+	DropItem "Clips" 25
+	DropItem "Shells" 25
+	DropItem "Cells" 25
+	DropItem "GrenadeAmmo" 25
+}
+
 // CORPSE
-Actor GroundedMarine 588
+Actor GroundedMarine : CorpsesDrops 588
 {
 	//$Category Corpses
 	height 20
@@ -38,7 +50,7 @@ states
 	}
 }
 
-ACTOR HangingMarine1A 7295
+ACTOR HangingMarine1A : CorpsesDrops 7295
 {
 //$Category Corpses
 	Health 100
@@ -80,7 +92,7 @@ ACTOR HangingMarine1A 7295
 	}
 }
 
-ACTOR HangingMarine1B
+ACTOR HangingMarine1B : CorpsesDrops
 {
 //$Category Corpses
 	Health 100
@@ -120,7 +132,7 @@ ACTOR HangingMarine1B
 	}
 }
 
-ACTOR HangingMarine2A 7297
+ACTOR HangingMarine2A : CorpsesDrops 7297
 {
 //$Category Corpses
 	Health 100
@@ -163,7 +175,7 @@ ACTOR HangingMarine2A 7297
 	}
 }
 
-ACTOR HangingMarine2B
+ACTOR HangingMarine2B : CorpsesDrops
 {
 //$Category Corpses
 	Mass 99999999
@@ -180,7 +192,7 @@ ACTOR HangingMarine2B
 	}
 }
 
-ACTOR MarineCorpseTo1A 7299
+ACTOR MarineCorpseTo1A : CorpsesDrops 7299
 {
 //$Category Corpses
 	Health 100
@@ -347,7 +359,7 @@ ACTOR ImpaledMarineHead 7373
 	}
 }
 
-ACTOR ImpaledMarineTornA 7300
+ACTOR ImpaledMarineTornA : CorpsesDrops 7300
 {
 //$Category Corpses
 	Health 100
@@ -387,7 +399,7 @@ ACTOR ImpaledMarineTornA 7300
 	}
 }
 
-ACTOR ImpaledMarineTornB 7301
+ACTOR ImpaledMarineTornB : CorpsesDrops 7301
 {
 //$Category Corpses
 	Health 100
@@ -427,7 +439,7 @@ ACTOR ImpaledMarineTornB 7301
 	}
 }
 
-ACTOR ImpaledMarineTornC 7302
+ACTOR ImpaledMarineTornC : CorpsesDrops 7302
 {
 //$Category Corpses
 	Health 100
@@ -469,7 +481,7 @@ ACTOR ImpaledMarineTornC 7302
 }
 
 // Dead Scientists
-Actor DeadMaleScientist 7343
+Actor DeadMaleScientist : CorpsesDrops 7343
 {
 //$Category Corpses
 Health 50
@@ -502,7 +514,7 @@ Health 50
 		Stop
   }}
 
-Actor DeadFemaleScientist 7344
+Actor DeadFemaleScientist : CorpsesDrops 7344
 {
 //$Category Corpses
  Health 50
@@ -535,7 +547,7 @@ Actor DeadFemaleScientist 7344
 		Stop
   }}
 // Hanged Marine (destroyable now!)
-ACTOR DeadHangingMarineBlocking 7345
+ACTOR DeadHangingMarineBlocking : CorpsesDrops 7345
 {
 //$Category Corpses
   Health 100
@@ -593,7 +605,7 @@ States
 		Stop
 	}}
 
-ACTOR ImpaledMarinePoleA 7374
+ACTOR ImpaledMarinePoleA : CorpsesDrops 7374
 {
 //$Category Corpses
 	Health 100
@@ -638,7 +650,7 @@ ACTOR ImpaledMarinePoleA 7374
 		Stop
 	}
 }
-ACTOR ImpaledMarinePoleB 7375
+ACTOR ImpaledMarinePoleB : CorpsesDrops 7375
 {
 //$Category Corpses
 	Health 100
@@ -684,7 +696,7 @@ ACTOR ImpaledMarinePoleB 7375
 	}
 }
 
-ACTOR DrownedMarine 7376
+ACTOR DrownedMarine : CorpsesDrops 7376
 {
 //$Category Corpses
 	Health 100
