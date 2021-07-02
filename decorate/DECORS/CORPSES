@@ -21,9 +21,6 @@ Actor GroundedMarine : CorpsesDrops 588
 	+SHOOTABLE
 	+FLOORCLIP
 	-SOLID
-	DropItem "HealthPlus" 25
-	DropItem "Clips" 25
-	DropItem "Shells" 25
     bloodtype "DeadBlood"
     damagefactor "Blood", 0.0
     damagefactor "GreenBlood", 0.0
@@ -61,9 +58,6 @@ ACTOR HangingMarine1A : CorpsesDrops 7295
 	+SPAWNCEILING
 	+SOLID
 	+SHOOTABLE
-	DropItem "HealthPlus" 25
-	DropItem "Clips" 25
-	DropItem "Shells" 25
     bloodtype "DeadBlood"
     damagefactor "Blood", 0.0
     damagefactor "GreenBlood", 0.0
@@ -102,9 +96,6 @@ ACTOR HangingMarine1B : CorpsesDrops
 	+NOGRAVITY
 	+SPAWNCEILING
 	+SHOOTABLE
-	DropItem "HealthPlus" 25
-	DropItem "Clips" 25
-	DropItem "Shells" 25
     bloodtype "DeadBlood"
     damagefactor "Blood", 0.0
     damagefactor "GreenBlood", 0.0
@@ -143,9 +134,6 @@ ACTOR HangingMarine2A : CorpsesDrops 7297
 	+SPAWNCEILING
 	+SOLID
 	+SHOOTABLE
-	DropItem "HealthPlus" 25
-	DropItem "Clips" 25
-	DropItem "Shells" 25
     bloodtype "DeadBlood"
     damagefactor "Blood", 0.0
     damagefactor "GreenBlood", 0.0
@@ -202,10 +190,6 @@ ACTOR MarineCorpseTo1A : CorpsesDrops 7299
 	+FLOORCLIP
 	-SOLID
 	+SHOOTABLE
-	DropItem "HealthPlus" 25
-	DropItem "Armorshard" 75
-	DropItem "Clips" 25
-	DropItem "Shells" 25
     bloodtype "DeadBlood"
     damagefactor "Blood", 0.0
     damagefactor "GreenBlood", 0.0
@@ -369,9 +353,6 @@ ACTOR ImpaledMarineTornA : CorpsesDrops 7300
 	+FLOORCLIP
 	+SOLID
 	+SHOOTABLE
-	DropItem "HealthPlus" 25
-	DropItem "Clips" 50
-	DropItem "Shells" 50
     bloodtype "DeadBlood"
     damagefactor "Blood", 0.0
     damagefactor "GreenBlood", 0.0
@@ -409,9 +390,6 @@ ACTOR ImpaledMarineTornB : CorpsesDrops 7301
 	+FLOORCLIP
 	+SOLID
 	+SHOOTABLE
-	DropItem "HealthPlus" 25
-	DropItem "Clips" 50
-	DropItem "Shells" 50
     bloodtype "DeadBlood"
     damagefactor "Blood", 0.0
     damagefactor "GreenBlood", 0.0
@@ -449,9 +427,6 @@ ACTOR ImpaledMarineTornC : CorpsesDrops 7302
 	+FLOORCLIP
 	+SOLID
 	+SHOOTABLE
-	DropItem "HealthPlus" 25
-	DropItem "Clips" 50
-	DropItem "Shells" 50
     bloodtype "DeadBlood"
     damagefactor "Blood", 0.0
     damagefactor "GreenBlood", 0.0
@@ -481,7 +456,7 @@ ACTOR ImpaledMarineTornC : CorpsesDrops 7302
 }
 
 // Dead Scientists
-Actor DeadMaleScientist : CorpsesDrops 7343
+Actor DeadMaleScientist 7343
 {
 //$Category Corpses
 Health 50
@@ -514,7 +489,7 @@ Health 50
 		Stop
   }}
 
-Actor DeadFemaleScientist : CorpsesDrops 7344
+Actor DeadFemaleScientist 7344
 {
 //$Category Corpses
  Health 50
@@ -558,9 +533,6 @@ ACTOR DeadHangingMarineBlocking : CorpsesDrops 7345
   +SPAWNCEILING
   +SOLID
   +SHOOTABLE
-  DropItem "HealthPlus" 25
-	DropItem "Clips" 25
-	DropItem "Shells" 25
     bloodtype "DeadBlood"
     damagefactor "Blood", 0.0
     damagefactor "GreenBlood", 0.0
@@ -615,9 +587,6 @@ ACTOR ImpaledMarinePoleA : CorpsesDrops 7374
 	+FLOORCLIP
 	+SOLID
 	+SHOOTABLE
-	DropItem "HealthPlus" 25
-	DropItem "Clips" 50
-	DropItem "Shells" 50
     bloodtype "DeadBlood"
     damagefactor "Blood", 0.0
     damagefactor "GreenBlood", 0.0
@@ -660,9 +629,6 @@ ACTOR ImpaledMarinePoleB : CorpsesDrops 7375
 	+FLOORCLIP
 	+SOLID
 	+SHOOTABLE
-	DropItem "HealthPlus" 25
-	DropItem "Clips" 50
-	DropItem "Shells" 50
     bloodtype "DeadBlood"
     damagefactor "Blood", 0.0
     damagefactor "GreenBlood", 0.0
@@ -707,9 +673,6 @@ ACTOR DrownedMarine : CorpsesDrops 7376
 	+SOLID
 	+SHOOTABLE
 	+PUSHABLE
-	DropItem "HealthPlus" 25
-	DropItem "Clips" 50
-	DropItem "Shells" 50
     bloodtype "DeadBlood"
     damagefactor "Blood", 0.0
     damagefactor "GreenBlood", 0.0
